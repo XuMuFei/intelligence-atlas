@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>智能纪元 · AI 全景档案 | 从图灵测试到星际文明</title>
+<meta name="description" content="一份关于人工智能的可视化全景档案：76 年技术演化时间轴、个人到世界五重尺度的 30 个实景应用、14 型机器人与智能硬件图鉴，以及面向 2029—2075 的想象推演。">
+<meta name="theme-color" content="#04060d">
+<meta property="og:title" content="智能纪元 · AI 全景档案">
+<meta property="og:description" content="从图灵测试到星际文明：AI 演化史、五重尺度实景应用、机器人图鉴与未来推演。">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2304060d'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%234ff0ff' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='2.5' fill='%23ff3ea5'/%3E%3C/svg%3E">
+<script>document.documentElement.className='js';</script>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<canvas id="net" class="net" aria-hidden="true"></canvas>
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<a class="skip" href="#timeline">跳到正文</a>
+
+<header class="topbar" id="topbar">
+  <div class="brand">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-txt">
+      <b>智能纪元</b>
+      <i>INTELLIGENCE · ATLAS / v2026.09</i>
+    </span>
+  </div>
+  <nav class="topnav" aria-label="章节导航">
+      <a href="#timeline">演化</a>
+      <a href="#scopes">实景</a>
+      <a href="#robots">图鉴</a>
+      <a href="#imagine">推演</a>
+      <a href="#metrics">读数</a>
+      <a href="#guard">护栏</a>
+  </nav>
+  <div class="statusline" aria-hidden="true">
+    <span class="dot"></span>
+    <span id="statusText">SYS ONLINE</span>
+  </div>
+  <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="打开章节菜单">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+  </button>
+</header>
+
+<nav class="mnav" id="mnav" aria-label="章节菜单" hidden>
+  <div class="mnav-inner">
+    <a href="#hero">00 · 启动</a>
+    <a href="#timeline">01 · 演化</a>
+    <a href="#scopes">02 · 实景</a>
+    <a href="#robots">03 · 图鉴</a>
+    <a href="#imagine">04 · 推演</a>
+    <a href="#metrics">05 · 读数</a>
+    <a href="#guard">06 · 护栏</a>
+    <a href="#close">07 · 尾声</a>
+  </div>
+</nav>
+
+<nav class="rail" aria-label="快速导航">
+  <ol id="rail">
+      <li class="on"><a href="#hero"><i aria-hidden="true"></i>00 · 启动</a></li>
+      <li><a href="#timeline"><i aria-hidden="true"></i>01 · 演化</a></li>
+      <li><a href="#scopes"><i aria-hidden="true"></i>02 · 实景</a></li>
+      <li><a href="#robots"><i aria-hidden="true"></i>03 · 图鉴</a></li>
+      <li><a href="#imagine"><i aria-hidden="true"></i>04 · 推演</a></li>
+      <li><a href="#metrics"><i aria-hidden="true"></i>05 · 读数</a></li>
+      <li><a href="#guard"><i aria-hidden="true"></i>06 · 护栏</a></li>
+      <li><a href="#close"><i aria-hidden="true"></i>07 · 尾声</a></li>
+  </ol>
+</nav>
+
+<noscript>
+  <div class="noscript-note">
+    当前浏览器未启用 JavaScript。档案的全部正文、参数与推演均已完整呈现；
+    时间轴筛选、尺度切换、图鉴检索与参数抽屉等交互不可用。
+  </div>
+</noscript>
+
+<main>
+<!-- ============ 00 / 开场 ============ -->
+<section class="hero" id="hero" data-rail="00 · 启动">
+  <div class="hud-frame" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <p class="eyebrow mono"><span class="tick" aria-hidden="true"></span>ARCHIVE_00 / 视觉档案 · 概念演示站</p>
+    <h1 class="hero-title">
+      <span class="line">智能<span class="grad">纪元</span></span>
+      <span class="sub line mono" id="boot">&gt; 载入 76 年 · 5 重尺度 · 14 型图鉴 · 10 条推演</span>
+    </h1>
+    <p class="hero-lede">
+      从 1950 年一场关于「机器能否思考」的追问，到今天口袋里、医院里、电网里、轨道上的
+      沉默基础设施。这份档案把 <em>人工智能</em> 摊开成四条线索：
+      <b>它从哪里来</b>、<b>此刻正在做什么</b>、<b>它长成了什么形态</b>、<b>它可能带我们去哪里</b>。
+    </p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#timeline">进入演化时间轴 <span aria-hidden="true">→</span></a>
+      <a class="btn" href="#imagine">直接跳到未来推演</a>
+    </div>
+
+    <dl class="hero-stats" id="heroStats">
+      <div><dt class="mono">YEARS_OF_HISTORY</dt><dd><b data-count="76">76</b><i>年</i></dd></div>
+      <div><dt class="mono">SCENES_TRACKED</dt><dd><b data-count="30">30</b><i>个实景场景</i></dd></div>
+      <div><dt class="mono">UNITS_CATALOGUED</dt><dd><b data-count="14">14</b><i>型图鉴在册</i></dd></div>
+      <div><dt class="mono">HORIZON</dt><dd><b data-count="2075">2075</b><i>年 · 推演上限</i></dd></div>
+    </dl>
+    <p class="mono fine">※ 本页数值为叙事示意数据，非实时接口结果。</p>
+  </div>
+  <div class="scroll-hint mono" aria-hidden="true">SCROLL ↓ 01</div>
+</section>
+
+<!-- ============ 01 / 演化时间轴 ============ -->
+<section class="chapter" id="timeline" data-rail="01 · 演化">
+  <div class="chapter-head">
+    <span class="num mono" aria-hidden="true">01</span>
+    <div>
+      <h2>演化时间轴</h2>
+      <p class="lede">
+        人工智能不是某一年突然出现的发明，而是一串被反复点燃又被判死刑的赌注。
+        选择任意节点查看它的技术内核与连锁后果。
+      </p>
+    </div>
+    <div class="era-switch" role="group" aria-label="按时代筛选">
+        <button class="chip is-on" type="button" data-era="all" aria-pressed="true">全部</button>
+        <button class="chip" type="button" data-era="found" aria-pressed="false">奠基</button>
+        <button class="chip" type="button" data-era="winter" aria-pressed="false">寒冬与复苏</button>
+        <button class="chip" type="button" data-era="deep" aria-pressed="false">深度学习</button>
+        <button class="chip" type="button" data-era="gen" aria-pressed="false">生成与智能体</button>
+    </div>
+  </div>
+
+  <div class="tl">
+    <div class="tl-railwrap" aria-hidden="true">
+      <div class="tl-track"><div class="tl-fill" id="tlFill"></div></div>
+    </div>
+    <div class="tl-list" id="tlList" role="listbox" aria-label="里程碑" aria-activedescendant="tl-opt-0" tabindex="0">
+      <button class="tl-item on" type="button" role="option" id="tl-opt-0"
+        aria-selected="true" tabindex="-1" data-i="0" data-era="found">
+        <span class="yr">1950</span>
+        <span class="nm">图灵提出「机器能思考吗」<small>起点</small></span>
+      </button>
+      <button class="tl-item" type="button" role="option" id="tl-opt-1"
+        aria-selected="false" tabindex="-1" data-i="1" data-era="found">
+        <span class="yr">1956</span>
+        <span class="nm">达特茅斯会议命名「人工智能」<small>命名</small></span>
+      </button>
+      <button class="tl-item" type="button" role="option" id="tl-opt-2"
+        aria-selected="false" tabindex="-1" data-i="2" data-era="found">
+        <span class="yr">1966</span>
+        <span class="nm">ELIZA 假装在倾听<small>错觉</small></span>
+      </button>
+      <button class="tl-item" type="button" role="option" id="tl-opt-3"
+        aria-selected="false" tabindex="-1" data-i="3" data-era="winter">
+        <span class="yr">1973</span>
+        <span class="nm">第一次寒冬：Lighthill 报告<small>退潮</small></span>
+      </button>
+      <button class="tl-item" type="button" role="option" id="tl-opt-4"
+        aria-selected="false" tabindex="-1" data-i="4" data-era="winter">
+        <span class="yr">1986</span>
+        <span class="nm">反向传播走进主流<small>火种</small></span>
+      </button>
+      <button class="tl-item" type="button" role="option" id="tl-opt-5"
+        aria-selected="false" tabindex="-1" data-i="5" data-era="winter">
+        <span class="yr">1997</span>
+        <span class="nm">深蓝战胜卡斯帕罗夫<small>首个里程碑</small></span>
+      </button>
+      <button class="tl-item" type="button" role="option" id="tl-opt-6"
+        aria-selected="false" tabindex="-1" data-i="6" data-era="deep">
+        <span class="yr">2012</span>
+        <span class="nm">AlexNet 引爆深度学习<small>转折</small></span>
+      </button>
+      <button class="tl-item" type="button" role="option" id="tl-opt-7"
+        aria-selected="false" tabindex="-1" data-i="7" data-era="deep">
+        <span class="yr">2016</span>
+        <span class="nm">AlphaGo：直觉可以被学习<small>升华</small></span>
+      </button>
+      <button class="tl-item" type="button" role="option" id="tl-opt-8"
+        aria-selected="false" tabindex="-1" data-i="8" data-era="deep">
+        <span class="yr">2017</span>
+        <span class="nm">Transformer：注意力成为通用接口<small>基础设施</small></span>
+      </button>
+      <button class="tl-item" type="button" role="option" id="tl-opt-9"
+        aria-selected="false" tabindex="-1" data-i="9" data-era="deep">
+        <span class="yr">2020</span>
+        <span class="nm">GPT-3：规模本身就是能力<small>涌现</small></span>
+      </button>
+      <button class="tl-item" type="button" role="option" id="tl-opt-10"
+        aria-selected="false" tabindex="-1" data-i="10" data-era="gen">
+        <span class="yr">2022</span>
+        <span class="nm">扩散模型与对话式 AI 同年落地<small>大众化</small></span>
+      </button>
+      <button class="tl-item" type="button" role="option" id="tl-opt-11"
+        aria-selected="false" tabindex="-1" data-i="11" data-era="gen">
+        <span class="yr">2024</span>
+        <span class="nm">视频生成与世界模型萌芽<small>物理感</small></span>
+      </button>
+      <button class="tl-item" type="button" role="option" id="tl-opt-12"
+        aria-selected="false" tabindex="-1" data-i="12" data-era="gen">
+        <span class="yr">2025</span>
+        <span class="nm">推理时计算：让模型多想一会儿<small>范式</small></span>
+      </button>
+      <button class="tl-item" type="button" role="option" id="tl-opt-13"
+        aria-selected="false" tabindex="-1" data-i="13" data-era="gen">
+        <span class="yr">2026</span>
+        <span class="nm">智能体元年：从回答到执行<small>此刻</small></span>
+      </button>
+    </div>
+    <div class="tl-detail" id="tlDetail" aria-live="polite">
+      <article class="tl-entry is-active" id="tl-det-0" data-i="0">
+        <span class="tag">起点 · 奠基期</span>
+        <div class="yr-big mono">1950</div>
+        <h3>图灵提出「机器能思考吗」</h3>
+        <p class="what">用一场问答游戏替代哲学定义：如果提问者在盲测中分不清人与机器，我们就没有理由否认机器在思考。</p>
+        <div class="kv">
+          <div><h4>技术内核</h4><p>判定标准从&quot;内在状态&quot;转向&quot;可观察行为&quot;——这为整个领域留下了评价方法论： benchmark 取代定义。</p></div>
+          <div><h4>连锁后果</h4><p>后续所有&quot;通过测试&quot;的宣称（聊天机器人、图灵奖、大模型评测）都在这个框架内争论。</p></div>
+        </div>
+        <div class="ripple"><h4>向下影响 →</h4><ul><li>行为主义评价观</li><li>对话系统</li><li>评测即目标函数的隐患</li></ul></div>
+      </article>
+      <article class="tl-entry" id="tl-det-1" data-i="1">
+        <span class="tag">命名 · 奠基期</span>
+        <div class="yr-big mono">1956</div>
+        <h3>达特茅斯会议命名「人工智能」</h3>
+        <p class="what">一场为期两个月的暑期研讨会，第一次把控制论、自动机、神经网和博弈论的人放在同一间屋子里，并发明了这个名字。</p>
+        <div class="kv">
+          <div><h4>技术内核</h4><p>核心假设：&quot;学习的每一个方面原则上都可以精确描述，从而由机器模拟。&quot;——强 AI 假设的最早表述。</p></div>
+          <div><h4>连锁后果</h4><p>这个名字沿用七十年，也成了每次期望破灭时被重新审视的标签。</p></div>
+        </div>
+        <div class="ripple"><h4>向下影响 →</h4><ul><li>学科建制</li><li>符号主义路线</li><li>周期性期望管理</li></ul></div>
+      </article>
+      <article class="tl-entry" id="tl-det-2" data-i="2">
+        <span class="tag">错觉 · 奠基期</span>
+        <div class="yr-big mono">1966</div>
+        <h3>ELIZA 假装在倾听</h3>
+        <p class="what">一个只有模式匹配和改写规则的聊天程序，却让使用者真心相信自己被理解了。</p>
+        <div class="kv">
+          <div><h4>技术内核</h4><p>揭示了&quot;ELIZA 效应&quot;：人类会主动为机器行为补上意图与情感。界面越像对话，误判越深。</p></div>
+          <div><h4>连锁后果</h4><p>今天的语音助手、陪伴型聊天机器人与客服 Bot，全都运行在同一条心理漏洞上。</p></div>
+        </div>
+        <div class="ripple"><h4>向下影响 →</h4><ul><li>拟人化风险</li><li>情感计算</li><li>透明性义务</li></ul></div>
+      </article>
+      <article class="tl-entry" id="tl-det-3" data-i="3">
+        <span class="tag">退潮 · 寒冬与复苏</span>
+        <div class="yr-big mono">1973</div>
+        <h3>第一次寒冬：Lighthill 报告</h3>
+        <p class="what">一份权威评估指出 AI 并未兑现&quot;十年内匹敌人类智能&quot;的承诺，英国随后大幅撤出公共资助，成为第一次寒冬的标志性事件。</p>
+        <div class="kv">
+          <div><h4>技术内核</h4><p>根因是组合爆炸与算力缺位：符号方法在小世界成立，在真实世界失效。</p></div>
+          <div><h4>连锁后果</h4><p>确立了此后每十年一次的&quot;承诺—破灭—重建&quot;节拍，也留下教训：不要把外推当预测。</p></div>
+        </div>
+        <div class="ripple"><h4>向下影响 →</h4><ul><li>算力依赖</li><li>专家系统转向</li><li>科研承诺的边界</li></ul></div>
+      </article>
+      <article class="tl-entry" id="tl-det-4" data-i="4">
+        <span class="tag">火种 · 寒冬与复苏</span>
+        <div class="yr-big mono">1986</div>
+        <h3>反向传播走进主流</h3>
+        <p class="what">Rumelhart、Hinton 与 Williams 让多层网络的学习变得可计算，连接主义从被放逐回到台面。</p>
+        <div class="kv">
+          <div><h4>技术内核</h4><p>链式法则给出梯度：误差从输出逐层回传，每一层参数按贡献被修正。学习变成优化问题。</p></div>
+          <div><h4>连锁后果</h4><p>今天每一次模型训练，跑的仍是这同一个算法的后代。</p></div>
+        </div>
+        <div class="ripple"><h4>向下影响 →</h4><ul><li>梯度优化</li><li>神经网络复兴</li><li>可微分编程</li></ul></div>
+      </article>
+      <article class="tl-entry" id="tl-det-5" data-i="5">
+        <span class="tag">首个里程碑 · 寒冬与复苏</span>
+        <div class="yr-big mono">1997</div>
+        <h3>深蓝战胜卡斯帕罗夫</h3>
+        <p class="what">一台专用机器在人类最引以为傲的策略游戏里赢了世界冠军。</p>
+        <div class="kv">
+          <div><h4>技术内核</h4><p>本质是每秒约 2 亿个局面的暴力搜索 + 人工调校的局面评估函数，而非&quot;理解&quot;国际象棋。</p></div>
+          <div><h4>连锁后果</h4><p>公众第一次集体意识到：在某些任务上，机器的天花板不再由人类上限决定。</p></div>
+        </div>
+        <div class="ripple"><h4>向下影响 →</h4><ul><li>专用 vs 通用</li><li>人机对抗叙事</li><li>算力崇拜</li></ul></div>
+      </article>
+      <article class="tl-entry" id="tl-det-6" data-i="6">
+        <span class="tag">转折 · 深度学习期</span>
+        <div class="yr-big mono">2012</div>
+        <h3>AlexNet 引爆深度学习</h3>
+        <p class="what">ImageNet 识别错误率被 GPU 上的卷积网络断崖式压低，领先第二名十个百分点。</p>
+        <div class="kv">
+          <div><h4>技术内核</h4><p>三要素首次同时到位：GPU 并行算力、大规模标注数据、可训练的深度架构。</p></div>
+          <div><h4>连锁后果</h4><p>此后十年，&quot;手工设计特征&quot;全面让位于&quot;从数据中学习表征&quot;。</p></div>
+        </div>
+        <div class="ripple"><h4>向下影响 →</h4><ul><li>GPU 生态</li><li>数据即壁垒</li><li>迁移学习</li></ul></div>
+      </article>
+      <article class="tl-entry" id="tl-det-7" data-i="7">
+        <span class="tag">升华 · 深度学习期</span>
+        <div class="yr-big mono">2016</div>
+        <h3>AlphaGo：直觉可以被学习</h3>
+        <p class="what">在分支因子远超国际象棋的搜索空间里，用价值网络替代人工直觉，并下出了人类棋谱中不存在的一手。</p>
+        <div class="kv">
+          <div><h4>技术内核</h4><p>监督学习 + 自我对弈强化学习 + 蒙特卡洛树搜索：先学人类，再超越人类，最后自己创造教材。</p></div>
+          <div><h4>连锁后果</h4><p>&quot;自我博弈产生人类没有的知识&quot;成为此后推理模型的方法论原型。</p></div>
+        </div>
+        <div class="ripple"><h4>向下影响 →</h4><ul><li>RLHF 前奏</li><li>不可解释的创造力</li><li>科学发现范式</li></ul></div>
+      </article>
+      <article class="tl-entry" id="tl-det-8" data-i="8">
+        <span class="tag">基础设施 · 深度学习期</span>
+        <div class="yr-big mono">2017</div>
+        <h3>Transformer：注意力成为通用接口</h3>
+        <p class="what">一篇题为《Attention Is All You Need》的论文，把序列建模统一成可完全并行的注意力运算。</p>
+        <div class="kv">
+          <div><h4>技术内核</h4><p>自注意力让任意两个位置直接交互，路径长度从 O(n) 降到 O(1)，因此能在海量语料上并行放大。</p></div>
+          <div><h4>连锁后果</h4><p>今天几乎所有大模型——文本、图像、视频、蛋白质、机器人策略——都是它的变体。</p></div>
+        </div>
+        <div class="ripple"><h4>向下影响 →</h4><ul><li>规模化定律</li><li>多模态统一</li><li>算力军备</li></ul></div>
+      </article>
+      <article class="tl-entry" id="tl-det-9" data-i="9">
+        <span class="tag">涌现 · 深度学习期</span>
+        <div class="yr-big mono">2020</div>
+        <h3>GPT-3：规模本身就是能力</h3>
+        <p class="what">1750 亿参数，未经专门训练就能完成翻译、写作、代码与算术——只需在提示里给几个例子。</p>
+        <div class="kv">
+          <div><h4>技术内核</h4><p>少样本学习：模型在预训练中隐式学会了&quot;学会一项新任务&quot;这一元技能。</p></div>
+          <div><h4>连锁后果</h4><p>AI 从&quot;为每个任务造一个模型&quot;变成&quot;一个模型承接所有任务&quot;，应用门槛降到一段文字。</p></div>
+        </div>
+        <div class="ripple"><h4>向下影响 →</h4><ul><li>提示工程</li><li>API 经济</li><li>数据壁垒</li></ul></div>
+      </article>
+      <article class="tl-entry" id="tl-det-10" data-i="10">
+        <span class="tag">大众化 · 生成与智能体期</span>
+        <div class="yr-big mono">2022</div>
+        <h3>扩散模型与对话式 AI 同年落地</h3>
+        <p class="what">一边是文生图走进设计工作流，一边是聊天界面让数亿人在两周内第一次和模型说话。</p>
+        <div class="kv">
+          <div><h4>技术内核</h4><p>扩散：反复加噪再学过去噪，把生成从&quot;一步预测&quot;变成&quot;逐步雕刻&quot;，稳定性远超对抗生成。</p></div>
+          <div><h4>连锁后果</h4><p>AI 正式从开发者工具变成大众基础设施，也第一次引发关于版权与真实的全球争论。</p></div>
+        </div>
+        <div class="ripple"><h4>向下影响 →</h4><ul><li>合成媒体</li><li>版权重构</li><li>AI 素养</li></ul></div>
+      </article>
+      <article class="tl-entry" id="tl-det-11" data-i="11">
+        <span class="tag">物理感 · 生成与智能体期</span>
+        <div class="yr-big mono">2024</div>
+        <h3>视频生成与世界模型萌芽</h3>
+        <p class="what">模型开始生成连贯的运动与光影，并隐式学到物体恒存、碰撞与流体——它有了&quot;世界如何运转&quot;的粗浅直觉。</p>
+        <div class="kv">
+          <div><h4>技术内核</h4><p>时空注意力 + 潜空间扩散：把时间当作第三维与空间一起建模。</p></div>
+          <div><h4>连锁后果</h4><p>为具身智能提供了可训练的仿真环境，机器人策略开始从真实数据采集转向世界模型预训练。</p></div>
+        </div>
+        <div class="ripple"><h4>向下影响 →</h4><ul><li>具身预训练</li><li>仿真到现实</li><li>影视工业化</li></ul></div>
+      </article>
+      <article class="tl-entry" id="tl-det-12" data-i="12">
+        <span class="tag">范式 · 生成与智能体期</span>
+        <div class="yr-big mono">2025</div>
+        <h3>推理时计算：让模型多想一会儿</h3>
+        <p class="what">把算力从&quot;训练时&quot;分一部分到&quot;推理时&quot;，模型通过长链条自我验证显著提升数学与代码能力。</p>
+        <div class="kv">
+          <div><h4>技术内核</h4><p>测试时扩展（test-time scaling）：采样多条推理路径 + 过程奖励模型择优，把搜索带回机器学习时代。</p></div>
+          <div><h4>连锁后果</h4><p>性能不再只靠堆参数，&quot;愿意花多少思考预算&quot;成为可调的产品旋钮。</p></div>
+        </div>
+        <div class="ripple"><h4>向下影响 →</h4><ul><li>过程监督</li><li>算力分层定价</li><li>可解释性契机</li></ul></div>
+      </article>
+      <article class="tl-entry" id="tl-det-13" data-i="13">
+        <span class="tag">此刻 · 生成与智能体期</span>
+        <div class="yr-big mono">2026</div>
+        <h3>智能体元年：从回答到执行</h3>
+        <p class="what">模型获得工具调用、持久记忆与长时程授权，开始数小时自主完成多步骤任务，并走进机器人身体。</p>
+        <div class="kv">
+          <div><h4>技术内核</h4><p>规划—执行—反思闭环 + 沙箱环境 + 检索与记忆，把语言模型变成可以承担流程的系统。</p></div>
+          <div><h4>连锁后果</h4><p>焦点从&quot;它说得对不对&quot;转向&quot;它做得可不可信&quot;——授权、审计与回滚成为核心工程问题。</p></div>
+        </div>
+        <div class="ripple"><h4>向下影响 →</h4><ul><li>人机授权界面</li><li>流程再造</li><li>责任归属</li></ul></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 / 五重尺度 ============ -->
+<section class="chapter" id="scopes" data-rail="02 · 实景">
+  <div class="chapter-head">
+    <span class="num mono" aria-hidden="true">02</span>
+    <div>
+      <h2>实景应用 · 五重尺度</h2>
+      <p class="lede">
+        同一项技术，放在不同尺度上会长成完全不同的东西。从一个人的清晨，到一颗行星的资源调度——
+        按 <kbd>←</kbd> <kbd>→</kbd> 或点击切换尺度。
+      </p>
+    </div>
+  </div>
+
+  <div class="scopes">
+    <div class="scope-tabs" role="tablist" aria-label="尺度">
+      <button role="tab" type="button" id="tab-self" aria-controls="panel-self" aria-selected="true" tabindex="0" data-scope="self">
+        <span class="mono idx">S1</span>个人<i>SELF</i>
+      </button>
+      <button role="tab" type="button" id="tab-home" aria-controls="panel-home" aria-selected="false" tabindex="-1" data-scope="home">
+        <span class="mono idx">S2</span>家庭<i>HOME</i>
+      </button>
+      <button role="tab" type="button" id="tab-city" aria-controls="panel-city" aria-selected="false" tabindex="-1" data-scope="city">
+        <span class="mono idx">S3</span>社会<i>CITY</i>
+      </button>
+      <button role="tab" type="button" id="tab-nation" aria-controls="panel-nation" aria-selected="false" tabindex="-1" data-scope="nation">
+        <span class="mono idx">S4</span>国家<i>NATION</i>
+      </button>
+      <button role="tab" type="button" id="tab-world" aria-controls="panel-world" aria-selected="false" tabindex="-1" data-scope="world">
+        <span class="mono idx">S5</span>世界<i>PLANET</i>
+      </button>
+    </div>
+    <div class="scope-panels" id="scopePanels">
+      <section class="scope-panel is-active" id="panel-self" role="tabpanel" aria-labelledby="tab-self" tabindex="0">
+        <div class="scope-hero">
+          <p class="eyebrow mono"><span class="tick" aria-hidden="true"></span>S1 / SELF</p>
+          <h3>个人尺度 · 一个人的清晨</h3>
+          <p class="day">06:40，睡眠阶段模型判定你进入浅睡，用光照与声音把你自然唤醒。07:10，健康助手综合昨晚的血糖、心率变异性与今日日程，把早餐建议改成了高蛋白；通勤路上，你的学习代理已经根据昨天的错题重新编排了 18 分钟的语言练习。到办公室时，一个属于你的模型副本已经整理好邮件、标注了三处需要你决策的地方，并把例行回复写好了草稿。</p>
+          <dl class="scope-metrics"><div><dt>随身智能设备</dt><dd>2.4<small>亿台/日活跃</small></dd></div><div><dt>日均交互</dt><dd>48<small>次</small></dd></div><div><dt>个人上下文窗口</dt><dd>128<small>K token</small></dd></div><div><dt>自主决策占比</dt><dd>17<small>%</small></dd></div></dl>
+          <p class="mono fine disclaimer">※ 本尺度数值为叙事示意，非实时统计。</p>
+        </div>
+        <div class="scene-grid">
+          <article class="scene">
+            <div class="hd"><h4>贴身健康哨兵</h4><span class="badge b-live">已普及</span></div>
+            <p>可穿戴设备的连续信号被拿去发现心律异常、睡眠呼吸暂停与血糖漂移，在症状出现前提示就医。真正的瓶颈不是算法，而是假阳性带来的焦虑与过度检查。</p>
+            <p class="who">关键张力 · 临床验证 · 数据归属</p>
+          </article>
+          <article class="scene">
+            <div class="hd"><h4>个性化学习教练</h4><span class="badge b-pilot">规模试点</span></div>
+            <p>它知道你在哪一步断链，能换一种讲法而不是重复同一句。长期记忆让&quot;教&quot;第一次可以真正连续——但也可能把学生锁在自己的能力舒适区里。</p>
+            <p class="who">关键张力 · 教育公平 · 依赖风险</p>
+          </article>
+          <article class="scene">
+            <div class="hd"><h4>第二大脑与记忆外骨骼</h4><span class="badge b-rising">快速上升</span></div>
+            <p>随手记下的会议片段、读过的段落、说过的承诺被自动索引，需要时以&quot;你自己写过的话&quot;的形式回来。风险很具体：当检索比回忆更便宜，人会不会失去内化知识的能力。</p>
+            <p class="who">关键张力 · 认知萎缩 · 隐私</p>
+          </article>
+          <article class="scene">
+            <div class="hd"><h4>创作者工作台</h4><span class="badge b-live">已普及</span></div>
+            <p>从分镜草图、配乐小样到多语言配音，个人产出能力被放大约一个团队。行业结构随之反转：瓶颈从执行能力转到审美判断与选题。</p>
+            <p class="who">关键张力 · 版权 · 同质化</p>
+          </article>
+          <article class="scene">
+            <div class="hd"><h4>决策副驾</h4><span class="badge b-pilot">规模试点</span></div>
+            <p>保险条款、合同、体检报告被翻译成&quot;哪些词会让你的赔付翻倍&quot;。价值最高的部分是它敢说出&quot;我不确定，去问律师&quot;。</p>
+            <p class="who">关键张力 · 责任边界 · 过度信任</p>
+          </article>
+          <article class="scene">
+            <div class="hd"><h4>情感陪伴代理</h4><span class="badge b-rising">快速上升</span></div>
+            <p>它永远在线、永远耐心、永远记得。临床上有用于孤独与社交训练的初步证据；同一时间，也出现了因关系替代而回避真人交往的案例。这条线必须画在真实世界。</p>
+            <p class="who">关键张力 · 拟人化伦理 · 未成年人保护</p>
+          </article>
+        </div>
+      </section>
+      <section class="scope-panel" id="panel-home" role="tabpanel" aria-labelledby="tab-home" tabindex="0">
+        <div class="scope-hero">
+          <p class="eyebrow mono"><span class="tick" aria-hidden="true"></span>S2 / HOME</p>
+          <h3>家庭尺度 · 一栋会照看人的房子</h3>
+          <p class="day">清晨，家庭能源代理根据明日电价曲线与光伏预测，把热水器与电动车充电挪到午后的低价时段。厨房里的机械臂完成了切配，扫地与整理机器人各自结算了昨夜的工作量。卫生间的地垫在老人如厕时检测到步态与驻留时间异常，先询问、再通知家人、最后才是呼叫——顺序本身就是一条规则。</p>
+          <dl class="scope-metrics"><div><dt>家庭自动化渗透</dt><dd>31<small>%</small></dd></div><div><dt>户均年节电</dt><dd>19<small>%</small></dd></div><div><dt>家务机器人保有</dt><dd>4 600<small>万台</small></dd></div><div><dt>照护替代时长</dt><dd>6.2<small>小时/日</small></dd></div></dl>
+          <p class="mono fine disclaimer">※ 本尺度数值为叙事示意，非实时统计。</p>
+        </div>
+        <div class="scene-grid">
+          <article class="scene">
+            <div class="hd"><h4>通用人形家务机器人</h4><span class="badge b-pilot">规模试点</span></div>
+            <p>叠衣、装载洗碗机、归位杂物——这些&quot;永远收拾不完&quot;的长尾任务，正是最难自动化也最有价值的部分。目前速度约为人手的三分之一，但它可以无限次重来。</p>
+            <p class="who">关键张力 · 成本 · 厨房安全</p>
+          </article>
+          <article class="scene">
+            <div class="hd"><h4>适老化照护与跌倒响应</h4><span class="badge b-rising">快速上升</span></div>
+            <p>非接触式雷达与地面压力传感替代摄像头，把&quot;监控&quot;变成&quot;感知&quot;。核心指标只有一个：从跌倒到被发现的分钟数。</p>
+            <p class="who">关键张力 · 尊严 · 误报疲劳</p>
+          </article>
+          <article class="scene">
+            <div class="hd"><h4>家庭能源与储能调度</h4><span class="badge b-live">已普及</span></div>
+            <p>光伏、电池、车、热泵与电价曲线做联合优化，把一个家的用能从消费变成调度。这是最快回本、最少争议的 AI 应用。</p>
+            <p class="who">关键张力 · 接口标准 · 电网负荷</p>
+          </article>
+          <article class="scene">
+            <div class="hd"><h4>膳食与冰箱库存管理</h4><span class="badge b-pilot">规模试点</span></div>
+            <p>识别剩余食材、按营养目标与忌口排出一周菜单、把缺的加进购物清单。难点是数据入口：谁愿意每天给冰箱拍照。</p>
+            <p class="who">关键张力 · 数据录入成本</p>
+          </article>
+          <article class="scene">
+            <div class="hd"><h4>家庭学习与儿童内容守门</h4><span class="badge b-rising">快速上升</span></div>
+            <p>按年龄与理解力改写文本，同时拦截不适宜内容。所有家长真正问的是同一个问题：它替我做决定，还是教我做决定。</p>
+            <p class="who">关键张力 · 价值对齐 · 家长控制权</p>
+          </article>
+          <article class="scene">
+            <div class="hd"><h4>住宅安全与异常识别</h4><span class="badge b-live">已普及</span></div>
+            <p>区分&quot;有人翻墙&quot;和&quot;猫在跳墙&quot;，把误报率从每天几十次降到每周几次。这是深度学习最朴素、也最扎实的一次胜利。</p>
+            <p class="who">关键张力 · 隐私 · 数据留存</p>
+          </article>
+        </div>
+      </section>
+      <section class="scope-panel" id="panel-city" role="tabpanel" aria-labelledby="tab-city" tabindex="0">
+        <div class="scope-hero">
+          <p class="eyebrow mono"><span class="tick" aria-hidden="true"></span>S3 / CITY</p>
+          <h3>社会尺度 · 城市作为一个实时系统</h3>
+          <p class="day">早高峰，一个区域的信号配时由全域代理联合优化——它不在乎单条路最快，而在乎整张网的排队总时长最短。救护车出发前 90 秒，沿途绿波已经排好。医院里，影像模型把可疑结节排进医生队列的第 3 位；法院里，一份量刑参考报告被打上&quot;仅供参考、已标注训练人群偏差&quot;的水印。</p>
+          <dl class="scope-metrics"><div><dt>信控覆盖路口</dt><dd>72<small>%</small></dd></div><div><dt>平均通勤下降</dt><dd>14<small>%</small></dd></div><div><dt>影像初筛辅助</dt><dd>63<small>%三甲</small></dd></div><div><dt>应急到达时间</dt><dd>-21<small>%</small></dd></div></dl>
+          <p class="mono fine disclaimer">※ 本尺度数值为叙事示意，非实时统计。</p>
+        </div>
+        <div class="scene-grid">
+          <article class="scene">
+            <div class="hd"><h4>城市交通信号自适应</h4><span class="badge b-live">已普及</span></div>
+            <p>从固定配时到按实时排队优化，再用仿真预演策略。收益可观但边界清晰：它无法凭空创造道路容量。</p>
+            <p class="who">关键张力 · 指标设计 · 主干道偏置</p>
+          </article>
+          <article class="scene">
+            <div class="hd"><h4>医疗影像与病理初筛</h4><span class="badge b-live">已普及</span></div>
+            <p>肺结节、糖网、乳腺与眼底筛查已进入常规流程，显著缓解放射科人力缺口。关键设计是&quot;排优先级&quot;而非&quot;下诊断&quot;——责任链保留在人身上。</p>
+            <p class="who">关键张力 · 误诊归属 · 训练人群偏差</p>
+          </article>
+          <article class="scene">
+            <div class="hd"><h4>电网负荷与新能源消纳</h4><span class="badge b-rising">快速上升</span></div>
+            <p>风电光伏的波动让传统调度方法失效，预测 + 随机优化把弃风弃光率压低数个百分点，等同于新建了几座调峰电站。</p>
+            <p class="who">关键张力 · 模型失效的系统性风险</p>
+          </article>
+          <article class="scene">
+            <div class="hd"><h4>司法与行政辅助评估</h4><span class="badge b-pilot">规模试点</span></div>
+            <p>类案检索、材料梳理、期限提醒是有效用途；风险评估分数用于量刑则争议巨大——历史上它已多次被证明会复制既有执法偏差。</p>
+            <p class="who">关键张力 · 正当程序 · 可解释性 · 申诉权</p>
+          </article>
+          <article class="scene">
+            <div class="hd"><h4>应急调度与灾害响应</h4><span class="badge b-pilot">规模试点</span></div>
+            <p>内涝、地震与森林火灾中的资源分配、路线重规划与无人机灾情普查。真正的价值在通讯中断时的自主协同能力。</p>
+            <p class="who">关键张力 · 断网降级 · 演练不足</p>
+          </article>
+          <article class="scene">
+            <div class="hd"><h4>无障碍与实时字幕</h4><span class="badge b-live">已普及</span></div>
+            <p>听障者获得实时转写与手语合成，视障者通过手机描述环境。这可能是 AI 最被低估的一项社会收益。</p>
+            <p class="who">关键张力 · 小语种覆盖 · 端侧可用性</p>
+          </article>
+        </div>
+      </section>
+      <section class="scope-panel" id="panel-nation" role="tabpanel" aria-labelledby="tab-nation" tabindex="0">
+        <div class="scope-hero">
+          <p class="eyebrow mono"><span class="tick" aria-hidden="true"></span>S4 / NATION</p>
+          <h3>国家尺度 · 基础设施级的智能</h3>
+          <p class="day">国家级气象代理把台风路径预报延伸到 96 小时并给出概率分布，疏散决策因此能提前一天启动。粮食储备系统根据产量遥感、物流与价格模拟联合调度。政务服务里，一份申请材料在进入人工窗口前已完成形式审查与一致性核验，退回时附上明确条款依据。</p>
+          <dl class="scope-metrics"><div><dt>中期气象预报技巧</dt><dd>+28<small>%</small></dd></div><div><dt>遥感作物估产误差</dt><dd>&lt;3.5<small>%</small></dd></div><div><dt>政务材料一次通过率</dt><dd>+34<small>%</small></dd></div><div><dt>新药临床前周期</dt><dd>-41<small>%</small></dd></div></dl>
+          <p class="mono fine disclaimer">※ 本尺度数值为叙事示意，非实时统计。</p>
+        </div>
+        <div class="scene-grid">
+          <article class="scene">
+            <div class="hd"><h4>AI 气象与极端事件预报</h4><span class="badge b-live">已普及</span></div>
+            <p>数据驱动模型在短期路径与降水预报上超过传统数值模式，且推理成本低几个数量级。混合方案成为主流：模型给速度，物理给守恒。</p>
+            <p class="who">关键张力 · 物理一致性 · 区域偏差</p>
+          </article>
+          <article class="scene">
+            <div class="hd"><h4>粮食安全与遥感估产</h4><span class="badge b-rising">快速上升</span></div>
+            <p>卫星识别作物类型、长势与旱情，把估产从抽样调查升级为全域观测，为储备与进出口决策提供提前量。</p>
+            <p class="who">关键张力 · 数据主权 · 军敏边界</p>
+          </article>
+          <article class="scene">
+            <div class="hd"><h4>新药与材料发现</h4><span class="badge b-pilot">规模试点</span></div>
+            <p>蛋白结构预测、分子生成与逆合成规划把临床前周期显著压缩。瓶颈转移到湿实验通量与临床验证——计算只能提出假设。</p>
+            <p class="who">关键张力 · 验证成本 · 可及性</p>
+          </article>
+          <article class="scene">
+            <div class="hd"><h4>智能制造与质检</h4><span class="badge b-live">已普及</span></div>
+            <p>产线视觉质检、工艺参数优化与预测性维护是渗透率最高的一类。一台设备少停机一小时，比任何一份报告都有说服力。</p>
+            <p class="who">关键张力 · 工人转型 · 设备接口</p>
+          </article>
+          <article class="scene">
+            <div class="hd"><h4>政务流程与合规审查</h4><span class="badge b-pilot">规模试点</span></div>
+            <p>法规检索、材料一致性核验、公开征求意见的自动归纳。核心原则是&quot;辅助裁量，不代替裁量&quot;。</p>
+            <p class="who">关键张力 · 算法问责 · 告知义务</p>
+          </article>
+          <article class="scene">
+            <div class="hd"><h4>基础设施体检</h4><span class="badge b-rising">快速上升</span></div>
+            <p>桥梁振动、管网渗漏声纹、电网局放信号被连续建模，把&quot;到期检修&quot;变成&quot;该修才修&quot;。这是最省钱、最少被讨论的用途之一。</p>
+            <p class="who">关键张力 · 传感投入 · 长周期验证</p>
+          </article>
+        </div>
+      </section>
+      <section class="scope-panel" id="panel-world" role="tabpanel" aria-labelledby="tab-world" tabindex="0">
+        <div class="scope-hero">
+          <p class="eyebrow mono"><span class="tick" aria-hidden="true"></span>S5 / PLANET</p>
+          <h3>世界尺度 · 行星边界的协调器</h3>
+          <p class="day">一片雨林的空域里，声学模型在链锯出现后的十二秒内定位盗伐点并派出去无人机；同一时刻，海洋浮标的碳通量数据被全球模型吸收，修正了今年的碳预算。跨语料的实时字幕让一场发展中国家听证会在 41 种语言中同时可理解——这是历史上第一次，语言没有成为规则的边界。</p>
+          <dl class="scope-metrics"><div><dt>气候模型分辨率</dt><dd>25<small>km</small></dd></div><div><dt>濒危语言活跃记录</dt><dd>+1 240<small>种</small></dd></div><div><dt>跨境实时翻译</dt><dd>116<small>语言</small></dd></div><div><dt>在轨调度卫星</dt><dd>3 800<small>颗</small></dd></div></dl>
+          <p class="mono fine disclaimer">※ 本尺度数值为叙事示意，非实时统计。</p>
+        </div>
+        <div class="scene-grid">
+          <article class="scene">
+            <div class="hd"><h4>气候与地球系统建模</h4><span class="badge b-rising">快速上升</span></div>
+            <p>用 ML 参数化替代部分物理近似，让同等算力下分辨率提升一个量级，云反馈与区域降水改善明显。争议在于模型是否学到了物理，还是学到了数据的相关性。</p>
+            <p class="who">关键张力 · 可信度 · 决策后果</p>
+          </article>
+          <article class="scene">
+            <div class="hd"><h4>生物多样性监测与反盗伐</h4><span class="badge b-pilot">规模试点</span></div>
+            <p>声学、相机陷阱与卫星雷达联动，把护林员从巡逻变成精准出警。已在多个保护区测得盗伐事件显著下降。</p>
+            <p class="who">关键张力 · 数据伦理 · 当地社区同意</p>
+          </article>
+          <article class="scene">
+            <div class="hd"><h4>流行病监测与预警</h4><span class="badge b-pilot">规模试点</span></div>
+            <p>废水、门诊关键词与航班网络的联合建模，可在确诊簇报告前若干天给出信号。最脆弱的一环不是模型，而是跨境数据共享的政治意愿。</p>
+            <p class="who">关键张力 ·  Surveillance 与自由</p>
+          </article>
+          <article class="scene">
+            <div class="hd"><h4>语言复兴与实时互译</h4><span class="badge b-live">已普及</span></div>
+            <p>低资源语言通过迁移学习与合成数据获得可用的翻译与语音技术，部分濒危语言第一次拥有了可书写的数字形态。</p>
+            <p class="who">关键张力 · 语言质量 · 文化霸权</p>
+          </article>
+          <article class="scene">
+            <div class="hd"><h4>海洋、冰川与碳汇核算</h4><span class="badge b-rising">快速上升</span></div>
+            <p>融合多源观测重建碳通量场，让&quot;这片森林固了多少碳&quot;从抽样估算变成可核对的连续量——这直接决定碳信用的可信度。</p>
+            <p class="who">关键张力 · 核算标准 · 交易公平</p>
+          </article>
+          <article class="scene">
+            <div class="hd"><h4>太空态势与在轨服务</h4><span class="badge b-early">早期</span></div>
+            <p>碎片编目、碰撞预警与自主规避：一个由算法维持的公域，需要一套尚不存在的国际规则。</p>
+            <p class="who">关键张力 · 轨道公地治理</p>
+          </article>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 / 机器人图鉴 ============ -->
+<section class="chapter" id="robots" data-rail="03 · 图鉴">
+  <div class="chapter-head">
+    <span class="num mono" aria-hidden="true">03</span>
+    <div>
+      <h2>机器人与智能硬件图鉴</h2>
+      <p class="lede">
+        当模型装进身体，抽象的智能就变成了可触摸的劳动。按形态与成熟度筛选，点击任意条目展开完整参数卡。
+      </p>
+    </div>
+  </div>
+
+  <div class="cat">
+    <div class="cat-bar">
+      <div class="cat-group" role="group" aria-label="按形态筛选">
+        <span class="cat-label mono">FORM</span>
+        <button class="chip is-on" type="button" data-form="all" aria-pressed="true">全部形态<span class="chip-n">14</span></button>
+        <button class="chip" type="button" data-form="humanoid" aria-pressed="false">人形<span class="chip-n">2</span></button>
+        <button class="chip" type="button" data-form="mobile" aria-pressed="false">移动/足式<span class="chip-n">3</span></button>
+        <button class="chip" type="button" data-form="arm" aria-pressed="false">机械臂<span class="chip-n">3</span></button>
+        <button class="chip" type="button" data-form="air" aria-pressed="false">空中<span class="chip-n">2</span></button>
+        <button class="chip" type="button" data-form="wear" aria-pressed="false">穿戴/植入<span class="chip-n">2</span></button>
+        <button class="chip" type="button" data-form="desk" aria-pressed="false">桌面/随身<span class="chip-n">2</span></button>
+      </div>
+      <div class="cat-group" role="group" aria-label="按成熟度筛选">
+        <span class="cat-label mono">MATURITY</span>
+        <button class="chip is-on" type="button" data-stage="all" aria-pressed="true">全部阶段<span class="chip-n">14</span></button>
+        <button class="chip" type="button" data-stage="live" aria-pressed="false">已量产<span class="chip-n">6</span></button>
+        <button class="chip" type="button" data-stage="pilot" aria-pressed="false">规模试点<span class="chip-n">6</span></button>
+        <button class="chip" type="button" data-stage="lab" aria-pressed="false">实验室<span class="chip-n">1</span></button>
+        <button class="chip" type="button" data-stage="early" aria-pressed="false">早期<span class="chip-n">1</span></button>
+      </div>
+      <div class="cat-group cat-query">
+        <label class="cat-label mono" for="catSearch">QUERY</label>
+        <input id="catSearch" type="search" placeholder="搜索名称、厂商或场景…" autocomplete="off">
+      </div>
+    </div>
+    <p class="cat-count mono" id="catCount" role="status">SHOWING <b>14</b> / 14 UNITS</p>
+    <div class="cat-grid" id="catGrid">
+      <article class="card" id="unit-HD-01" data-i="0" data-form="humanoid" data-stage="pilot" data-ms="64" data-search="全尺寸双足通用人形 工业路线 · 全尺寸双足 面向工厂与仓储的双足通用人形：搬运、上下料、装配与整理。以仿真为主、真实数据为辅的策略训练，让同一套模型在多个工位之间迁移。 汽车总装线的物料周转 仓储拆零与码垛 危险环境巡检替代人工 hd-01 人形 规模试点">
+        <div class="c-vis" style="color:#4ff0ff"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="32" cy="10" r="6.5"/><path d="M32 17v15M32 22l-11 7M32 22l11 7M32 32l-8 16M32 32l8 16"/><circle cx="32" cy="10" r="2" fill="currentColor" stroke="none"/></svg></div>
+        <div class="c-body">
+          <p class="c-code mono">HD-01 · 人形</p>
+          <h4>全尺寸双足通用人形</h4>
+          <p class="vendor">工业路线 · 全尺寸双足</p>
+          <dl class="c-specs"><div><dt>自由度</dt><dd>41</dd></div><div><dt>续航</dt><dd>2.4 h</dd></div><div><dt>负载</dt><dd>12 kg</dd></div><div><dt>算力</dt><dd>1.2 PFLOPS (端侧)</dd></div><div><dt>身高</dt><dd>1.72 m</dd></div><div><dt>参考单价</dt><dd>¥ 1.2–1.8 M</dd></div></dl>
+          <div class="c-foot">
+            <span class="badge pilot">规模试点</span>
+            <span class="c-bar" role="img" aria-label="成熟度指数 64 / 100"><i style="--v:64%"></i></span>
+          </div>
+          <button class="card-open mono" type="button" aria-haspopup="dialog" aria-controls="drawer">查看完整参数 <span aria-hidden="true">→</span></button>
+          <div class="card-extra">
+            <p class="dz-sum">面向工厂与仓储的双足通用人形：搬运、上下料、装配与整理。以仿真为主、真实数据为辅的策略训练，让同一套模型在多个工位之间迁移。</p>
+            <div class="dz-sec"><h4>典型部署场景</h4><ul><li>汽车总装线的物料周转</li><li>仓储拆零与码垛</li><li>危险环境巡检替代人工</li></ul></div>
+            <div class="dz-sec"><h4>当前的真实边界</h4><p>续航与热设计决定它只能双班倒而非全天值守；地面湿滑、线缆与非结构化障碍仍是长尾失败模式；单台成本回收期约 14–20 个月。</p></div>
+            <p class="mono fine disclaimer">※ 参数为叙事示意，不构成产品规格。</p>
+          </div>
+        </div>
+      </article>
+      <article class="card" id="unit-HD-02" data-i="1" data-form="humanoid" data-stage="lab" data-ms="38" data-search="轻量家用人形 消费路线 · 上半身作业 牺牲行走能力换取作业能力：轮式底盘 + 双臂，专注厨房、衣物与整理这类家庭长尾任务，安全性优先于通用性。 切配与餐后收纳 衣物折叠归位 老人起身协助 hd-02 人形 实验室">
+        <div class="c-vis" style="color:#ffb347"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="32" cy="10" r="6.5"/><path d="M32 17v15M32 22l-11 7M32 22l11 7M32 32l-8 16M32 32l8 16"/><circle cx="32" cy="10" r="2" fill="currentColor" stroke="none"/></svg></div>
+        <div class="c-body">
+          <p class="c-code mono">HD-02 · 人形</p>
+          <h4>轻量家用人形</h4>
+          <p class="vendor">消费路线 · 上半身作业</p>
+          <dl class="c-specs"><div><dt>自由度</dt><dd>22</dd></div><div><dt>续航</dt><dd>3.0 h</dd></div><div><dt>负载</dt><dd>5 kg</dd></div><div><dt>算力</dt><dd>端侧 NPU</dd></div><div><dt>身高</dt><dd>1.28 m</dd></div><div><dt>参考单价</dt><dd>¥ 60–90 K</dd></div></dl>
+          <div class="c-foot">
+            <span class="badge lab">实验室</span>
+            <span class="c-bar" role="img" aria-label="成熟度指数 38 / 100"><i style="--v:38%"></i></span>
+          </div>
+          <button class="card-open mono" type="button" aria-haspopup="dialog" aria-controls="drawer">查看完整参数 <span aria-hidden="true">→</span></button>
+          <div class="card-extra">
+            <p class="dz-sum">牺牲行走能力换取作业能力：轮式底盘 + 双臂，专注厨房、衣物与整理这类家庭长尾任务，安全性优先于通用性。</p>
+            <div class="dz-sec"><h4>典型部署场景</h4><ul><li>切配与餐后收纳</li><li>衣物折叠归位</li><li>老人起身协助</li></ul></div>
+            <div class="dz-sec"><h4>当前的真实边界</h4><p>家庭环境的物体种类近乎无限，泛化仍是核心难题；与水、火、刀具共处需要硬件级联锁，不能只靠模型判断。</p></div>
+            <p class="mono fine disclaimer">※ 参数为叙事示意，不构成产品规格。</p>
+          </div>
+        </div>
+      </article>
+      <article class="card" id="unit-MB-01" data-i="2" data-form="mobile" data-stage="live" data-ms="82" data-search="四足巡检犬 工业巡检 · 全地形 变电站、管廊、隧道与工地的自主巡检平台：多传感器云台读取仪表、测温、听音、检测气体并自主回充。 电力与石化巡检 地下管廊 工地安全巡查 mb-01 移动/足式 已量产">
+        <div class="c-vis" style="color:#7dffb0"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="14" y="20" width="36" height="14" rx="3"/><path d="M20 34l-5 12M28 34l-2 12M40 34l2 12M48 34l5 12"/><circle cx="14" cy="24" r="4"/><path d="M10 24h-6"/></svg></div>
+        <div class="c-body">
+          <p class="c-code mono">MB-01 · 移动/足式</p>
+          <h4>四足巡检犬</h4>
+          <p class="vendor">工业巡检 · 全地形</p>
+          <dl class="c-specs"><div><dt>自由度</dt><dd>12–19</dd></div><div><dt>续航</dt><dd>2.5–4 h</dd></div><div><dt>负载</dt><dd>15 kg</dd></div><div><dt>越障</dt><dd>32 cm</dd></div><div><dt>防护</dt><dd>IP66</dd></div><div><dt>参考单价</dt><dd>¥ 120–260 K</dd></div></dl>
+          <div class="c-foot">
+            <span class="badge live">已量产</span>
+            <span class="c-bar" role="img" aria-label="成熟度指数 82 / 100"><i style="--v:82%"></i></span>
+          </div>
+          <button class="card-open mono" type="button" aria-haspopup="dialog" aria-controls="drawer">查看完整参数 <span aria-hidden="true">→</span></button>
+          <div class="card-extra">
+            <p class="dz-sum">变电站、管廊、隧道与工地的自主巡检平台：多传感器云台读取仪表、测温、听音、检测气体并自主回充。</p>
+            <div class="dz-sec"><h4>典型部署场景</h4><ul><li>电力与石化巡检</li><li>地下管廊</li><li>工地安全巡查</li></ul></div>
+            <div class="dz-sec"><h4>当前的真实边界</h4><p>价值来自替换重复且危险的例行巡逻；但报表可信度取决于传感器标定与缺陷库的持续运营，机器人只是载体。</p></div>
+            <p class="mono fine disclaimer">※ 参数为叙事示意，不构成产品规格。</p>
+          </div>
+        </div>
+      </article>
+      <article class="card" id="unit-MB-02" data-i="3" data-form="mobile" data-stage="live" data-ms="74" data-search="家庭陪伴机器狗 消费 · 情感交互 会认人、会跟随、会主动搭话的低成本足式机器人。真实用途是儿童陪伴、老人激活与独居者的&quot;屋里有人&quot;感。 独居陪伴与提醒 儿童互动与英语学习 宠物远程逗玩 mb-02 移动/足式 已量产">
+        <div class="c-vis" style="color:#7dffb0"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="14" y="20" width="36" height="14" rx="3"/><path d="M20 34l-5 12M28 34l-2 12M40 34l2 12M48 34l5 12"/><circle cx="14" cy="24" r="4"/><path d="M10 24h-6"/></svg></div>
+        <div class="c-body">
+          <p class="c-code mono">MB-02 · 移动/足式</p>
+          <h4>家庭陪伴机器狗</h4>
+          <p class="vendor">消费 · 情感交互</p>
+          <dl class="c-specs"><div><dt>自由度</dt><dd>11</dd></div><div><dt>续航</dt><dd>2.8 h</dd></div><div><dt>传感</dt><dd>ToF + IMU + 麦克风阵</dd></div><div><dt>交互</dt><dd>多模态语音</dd></div><div><dt>重量</dt><dd>4.2 kg</dd></div><div><dt>参考单价</dt><dd>¥ 3–9 K</dd></div></dl>
+          <div class="c-foot">
+            <span class="badge live">已量产</span>
+            <span class="c-bar" role="img" aria-label="成熟度指数 74 / 100"><i style="--v:74%"></i></span>
+          </div>
+          <button class="card-open mono" type="button" aria-haspopup="dialog" aria-controls="drawer">查看完整参数 <span aria-hidden="true">→</span></button>
+          <div class="card-extra">
+            <p class="dz-sum">会认人、会跟随、会主动搭话的低成本足式机器人。真实用途是儿童陪伴、老人激活与独居者的&quot;屋里有人&quot;感。</p>
+            <div class="dz-sec"><h4>典型部署场景</h4><ul><li>独居陪伴与提醒</li><li>儿童互动与英语学习</li><li>宠物远程逗玩</li></ul></div>
+            <div class="dz-sec"><h4>当前的真实边界</h4><p>情感黏性是设计目标，也是监管焦点；麦克风与摄像头的常开状态需要端侧处理与物理开关作为底线。</p></div>
+            <p class="mono fine disclaimer">※ 参数为叙事示意，不构成产品规格。</p>
+          </div>
+        </div>
+      </article>
+      <article class="card" id="unit-MB-03" data-i="4" data-form="mobile" data-stage="live" data-ms="96" data-search="仓储 amr 车队 物流 · 集群调度 单体智能有限、集群智能极强：中央调度用强化学习与运筹混合算法，把数千台小车的路径冲突与拥堵当作一个整体来优化。 电商分拣中心 工厂线边物流 港口水平运输 mb-03 移动/足式 已量产">
+        <div class="c-vis" style="color:#7dffb0"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="14" y="20" width="36" height="14" rx="3"/><path d="M20 34l-5 12M28 34l-2 12M40 34l2 12M48 34l5 12"/><circle cx="14" cy="24" r="4"/><path d="M10 24h-6"/></svg></div>
+        <div class="c-body">
+          <p class="c-code mono">MB-03 · 移动/足式</p>
+          <h4>仓储 AMR 车队</h4>
+          <p class="vendor">物流 · 集群调度</p>
+          <dl class="c-specs"><div><dt>导航</dt><dd>激光 + 视觉 SLAM</dd></div><div><dt>负载</dt><dd>50–1 500 kg</dd></div><div><dt>集群规模</dt><dd>单仓 3 000+</dd></div><div><dt>续航</dt><dd>自主换电</dd></div><div><dt>吞吐提升</dt><dd>+40%</dd></div><div><dt>参考单价</dt><dd>¥ 80–300 K</dd></div></dl>
+          <div class="c-foot">
+            <span class="badge live">已量产</span>
+            <span class="c-bar" role="img" aria-label="成熟度指数 96 / 100"><i style="--v:96%"></i></span>
+          </div>
+          <button class="card-open mono" type="button" aria-haspopup="dialog" aria-controls="drawer">查看完整参数 <span aria-hidden="true">→</span></button>
+          <div class="card-extra">
+            <p class="dz-sum">单体智能有限、集群智能极强：中央调度用强化学习与运筹混合算法，把数千台小车的路径冲突与拥堵当作一个整体来优化。</p>
+            <div class="dz-sec"><h4>典型部署场景</h4><ul><li>电商分拣中心</li><li>工厂线边物流</li><li>港口水平运输</li></ul></div>
+            <div class="dz-sec"><h4>当前的真实边界</h4><p>这是 AI 商业化最成熟的形态之一——收益可直接以单件成本计算；短板在于柔性不足，改布局需重建模。</p></div>
+            <p class="mono fine disclaimer">※ 参数为叙事示意，不构成产品规格。</p>
+          </div>
+        </div>
+      </article>
+      <article class="card" id="unit-AR-01" data-i="5" data-form="arm" data-stage="live" data-ms="88" data-search="手术机械臂系统 医疗 · 亚毫米精度 医生主刀、机器滤颤并放大视野；新一代引入术前规划与术中解剖结构叠加，把关键血管与神经实时标在视野里。 微创与前列腺手术 远程超声与超声介入 骨科定位 ar-01 机械臂 已量产">
+        <div class="c-vis" style="color:#7dffb0"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 54h16"/><path d="M16 54V38l16-14 14 8"/><circle cx="16" cy="38" r="3.5"/><circle cx="32" cy="24" r="3.5"/><circle cx="46" cy="32" r="3.5"/><path d="M46 32l9-6m0 0l6 3m-6-3l2 7"/></svg></div>
+        <div class="c-body">
+          <p class="c-code mono">AR-01 · 机械臂</p>
+          <h4>手术机械臂系统</h4>
+          <p class="vendor">医疗 · 亚毫米精度</p>
+          <dl class="c-specs"><div><dt>精度</dt><dd>&lt;0.1 mm</dd></div><div><dt>自由度</dt><dd>7 × 4臂</dd></div><div><dt>滤颤</dt><dd>100 Hz</dd></div><div><dt>时延</dt><dd>&lt;20 ms</dd></div><div><dt>术式</dt><dd>腔镜/泌尿/心胸</dd></div><div><dt>参考单价</dt><dd>¥ 15–25 M</dd></div></dl>
+          <div class="c-foot">
+            <span class="badge live">已量产</span>
+            <span class="c-bar" role="img" aria-label="成熟度指数 88 / 100"><i style="--v:88%"></i></span>
+          </div>
+          <button class="card-open mono" type="button" aria-haspopup="dialog" aria-controls="drawer">查看完整参数 <span aria-hidden="true">→</span></button>
+          <div class="card-extra">
+            <p class="dz-sum">医生主刀、机器滤颤并放大视野；新一代引入术前规划与术中解剖结构叠加，把关键血管与神经实时标在视野里。</p>
+            <div class="dz-sec"><h4>典型部署场景</h4><ul><li>微创与前列腺手术</li><li>远程超声与超声介入</li><li>骨科定位</li></ul></div>
+            <div class="dz-sec"><h4>当前的真实边界</h4><p>自主执行仍被严格限制在人类监督之下；真正的变革来自远程手术网络与耗材成本，而非&quot;机器人自己开刀&quot;。</p></div>
+            <p class="mono fine disclaimer">※ 参数为叙事示意，不构成产品规格。</p>
+          </div>
+        </div>
+      </article>
+      <article class="card" id="unit-AR-02" data-i="6" data-form="arm" data-stage="pilot" data-ms="57" data-search="具身双臂作业站 制造 · 灵巧操作 用视觉—语言—动作模型驱动的抓取与装配：能听&quot;把那个歪掉的齿轮挑出来放右边&quot;，并直接把它做对。 多品种小批量装配 柔性分拣与包装 实验室自动化 ar-02 机械臂 规模试点">
+        <div class="c-vis" style="color:#4ff0ff"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 54h16"/><path d="M16 54V38l16-14 14 8"/><circle cx="16" cy="38" r="3.5"/><circle cx="32" cy="24" r="3.5"/><circle cx="46" cy="32" r="3.5"/><path d="M46 32l9-6m0 0l6 3m-6-3l2 7"/></svg></div>
+        <div class="c-body">
+          <p class="c-code mono">AR-02 · 机械臂</p>
+          <h4>具身双臂作业站</h4>
+          <p class="vendor">制造 · 灵巧操作</p>
+          <dl class="c-specs"><div><dt>自由度</dt><dd>2 × 7 + 灵巧手</dd></div><div><dt>视觉</dt><dd>双目 + 腕部相机</dd></div><div><dt>策略</dt><dd>VLA 端到端</dd></div><div><dt>节拍</dt><dd>22 s/件</dd></div><div><dt>力控</dt><dd>6 轴 F/T</dd></div><div><dt>参考单价</dt><dd>¥ 250–480 K</dd></div></dl>
+          <div class="c-foot">
+            <span class="badge pilot">规模试点</span>
+            <span class="c-bar" role="img" aria-label="成熟度指数 57 / 100"><i style="--v:57%"></i></span>
+          </div>
+          <button class="card-open mono" type="button" aria-haspopup="dialog" aria-controls="drawer">查看完整参数 <span aria-hidden="true">→</span></button>
+          <div class="card-extra">
+            <p class="dz-sum">用视觉—语言—动作模型驱动的抓取与装配：能听&quot;把那个歪掉的齿轮挑出来放右边&quot;，并直接把它做对。</p>
+            <div class="dz-sec"><h4>典型部署场景</h4><ul><li>多品种小批量装配</li><li>柔性分拣与包装</li><li>实验室自动化</li></ul></div>
+            <div class="dz-sec"><h4>当前的真实边界</h4><p>VLA 让&quot;换个新品就要重新编程&quot;的行业痛点亮度下降，但可靠性仍以&quot;每千次抓取失败几次&quot;衡量；失败恢复比成功执行更难。</p></div>
+            <p class="mono fine disclaimer">※ 参数为叙事示意，不构成产品规格。</p>
+          </div>
+        </div>
+      </article>
+      <article class="card" id="unit-AR-03" data-i="7" data-form="arm" data-stage="pilot" data-ms="44" data-search="微型介入与胶囊机器人 医疗 · 体内作业 把&quot;开刀取活检&quot;变成&quot;顺着自然腔道送一个机器人进去&quot;。磁控导管在中枢血管介入中已显示临床价值。 胶囊内镜 脑血管取栓导向 经自然腔道肿瘤活检 ar-03 机械臂 规模试点">
+        <div class="c-vis" style="color:#4ff0ff"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 54h16"/><path d="M16 54V38l16-14 14 8"/><circle cx="16" cy="38" r="3.5"/><circle cx="32" cy="24" r="3.5"/><circle cx="46" cy="32" r="3.5"/><path d="M46 32l9-6m0 0l6 3m-6-3l2 7"/></svg></div>
+        <div class="c-body">
+          <p class="c-code mono">AR-03 · 机械臂</p>
+          <h4>微型介入与胶囊机器人</h4>
+          <p class="vendor">医疗 · 体内作业</p>
+          <dl class="c-specs"><div><dt>直径</dt><dd>&lt;8 mm</dd></div><div><dt>驱动</dt><dd>磁控 / 自推进</dd></div><div><dt>成像</dt><dd>全景 4K</dd></div><div><dt>到达</dt><dd>小肠/胆道/颅内</dd></div><div><dt>留置</dt><dd>&lt;90 min</dd></div><div><dt>参考单价</dt><dd>耗材化</dd></div></dl>
+          <div class="c-foot">
+            <span class="badge pilot">规模试点</span>
+            <span class="c-bar" role="img" aria-label="成熟度指数 44 / 100"><i style="--v:44%"></i></span>
+          </div>
+          <button class="card-open mono" type="button" aria-haspopup="dialog" aria-controls="drawer">查看完整参数 <span aria-hidden="true">→</span></button>
+          <div class="card-extra">
+            <p class="dz-sum">把&quot;开刀取活检&quot;变成&quot;顺着自然腔道送一个机器人进去&quot;。磁控导管在中枢血管介入中已显示临床价值。</p>
+            <div class="dz-sec"><h4>典型部署场景</h4><ul><li>胶囊内镜</li><li>脑血管取栓导向</li><li>经自然腔道肿瘤活检</li></ul></div>
+            <div class="dz-sec"><h4>当前的真实边界</h4><p>体内机器人的每一个决策都无法回滚，因此定位误差、影像延迟与医生接管路径的设计优先级高于任何自主性指标。</p></div>
+            <p class="mono fine disclaimer">※ 参数为叙事示意，不构成产品规格。</p>
+          </div>
+        </div>
+      </article>
+      <article class="card" id="unit-AI-01" data-i="8" data-form="air" data-stage="pilot" data-ms="61" data-search="城市低空物流无人机 配送 · bvlos 血液、急救药、工业零件与生鲜的点对点运输。核心不是飞，而是&quot;在有人住的地方持续、合规、可审计地飞&quot;。 医疗急送 海岛与山区补给 园区内部物流 ai-01 空中 规模试点">
+        <div class="c-vis" style="color:#4ff0ff"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M32 26v14M25 33h14"/><circle cx="32" cy="33" r="5"/><path d="M20 20l-8-8M44 20l8-8M20 46l-8 8M44 46l8 8"/><circle cx="12" cy="12" r="5"/><circle cx="52" cy="12" r="5"/><circle cx="12" cy="52" r="5"/><circle cx="52" cy="52" r="5"/></svg></div>
+        <div class="c-body">
+          <p class="c-code mono">AI-01 · 空中</p>
+          <h4>城市低空物流无人机</h4>
+          <p class="vendor">配送 · BVLOS</p>
+          <dl class="c-specs"><div><dt>航程</dt><dd>18 km</dd></div><div><dt>载重</dt><dd>2.5 kg</dd></div><div><dt>避障</dt><dd>全向视觉 + 雷达</dd></div><div><dt>空管</dt><dd>UTM 联网</dd></div><div><dt>单件成本</dt><dd>¥ 3–8</dd></div><div><dt>起降</dt><dd>垂直坪</dd></div></dl>
+          <div class="c-foot">
+            <span class="badge pilot">规模试点</span>
+            <span class="c-bar" role="img" aria-label="成熟度指数 61 / 100"><i style="--v:61%"></i></span>
+          </div>
+          <button class="card-open mono" type="button" aria-haspopup="dialog" aria-controls="drawer">查看完整参数 <span aria-hidden="true">→</span></button>
+          <div class="card-extra">
+            <p class="dz-sum">血液、急救药、工业零件与生鲜的点对点运输。核心不是飞，而是&quot;在有人住的地方持续、合规、可审计地飞&quot;。</p>
+            <div class="dz-sec"><h4>典型部署场景</h4><ul><li>医疗急送</li><li>海岛与山区补给</li><li>园区内部物流</li></ul></div>
+            <div class="dz-sec"><h4>当前的真实边界</h4><p>规模化的门槛在空域许可、噪音容忍度与降落点网络；单件成本已低于人力，监管节奏才是决定变量。</p></div>
+            <p class="mono fine disclaimer">※ 参数为叙事示意，不构成产品规格。</p>
+          </div>
+        </div>
+      </article>
+      <article class="card" id="unit-AI-02" data-i="9" data-form="air" data-stage="live" data-ms="79" data-search="农业植保与采摘集群 农业 · 田级自主 从&quot;整片均匀喷&quot;到&quot;看草喷药、看果采摘&quot;：多光谱识别与变量施药让农药用量断崖式下降，采摘臂开始承担高价值水果。 变量施药与除草 果树采摘 墒情与苗情普查 ai-02 空中 已量产">
+        <div class="c-vis" style="color:#7dffb0"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M32 26v14M25 33h14"/><circle cx="32" cy="33" r="5"/><path d="M20 20l-8-8M44 20l8-8M20 46l-8 8M44 46l8 8"/><circle cx="12" cy="12" r="5"/><circle cx="52" cy="12" r="5"/><circle cx="12" cy="52" r="5"/><circle cx="52" cy="52" r="5"/></svg></div>
+        <div class="c-body">
+          <p class="c-code mono">AI-02 · 空中</p>
+          <h4>农业植保与采摘集群</h4>
+          <p class="vendor">农业 · 田级自主</p>
+          <dl class="c-specs"><div><dt>作业</dt><dd>喷洒/播种/巡田</dd></div><div><dt>效率</dt><dd>60 亩/小时</dd></div><div><dt>识别</dt><dd>病害/杂草/成熟度</dd></div><div><dt>用药下降</dt><dd>-31%</dd></div><div><dt>导航</dt><dd>RTK + 视觉</dd></div><div><dt>参考单价</dt><dd>¥ 30–120 K</dd></div></dl>
+          <div class="c-foot">
+            <span class="badge live">已量产</span>
+            <span class="c-bar" role="img" aria-label="成熟度指数 79 / 100"><i style="--v:79%"></i></span>
+          </div>
+          <button class="card-open mono" type="button" aria-haspopup="dialog" aria-controls="drawer">查看完整参数 <span aria-hidden="true">→</span></button>
+          <div class="card-extra">
+            <p class="dz-sum">从&quot;整片均匀喷&quot;到&quot;看草喷药、看果采摘&quot;：多光谱识别与变量施药让农药用量断崖式下降，采摘臂开始承担高价值水果。</p>
+            <div class="dz-sec"><h4>典型部署场景</h4><ul><li>变量施药与除草</li><li>果树采摘</li><li>墒情与苗情普查</li></ul></div>
+            <div class="dz-sec"><h4>当前的真实边界</h4><p>田间是非结构化环境的极端案例：光照、风、枝叶遮挡与果实形态每次都不同；采摘节拍仍慢于熟练人工。</p></div>
+            <p class="mono fine disclaimer">※ 参数为叙事示意，不构成产品规格。</p>
+          </div>
+        </div>
+      </article>
+      <article class="card" id="unit-WD-01" data-i="10" data-form="wear" data-stage="pilot" data-ms="52" data-search="外骨骼与康复动力辅具 人体增强 算法读懂步态意图后再决定何时助力，让穿戴者感觉&quot;是自己在走&quot;。工业版降低腰部负荷，医疗版帮卒中患者重学步态。 物流与制造搬运 脊髓损伤康复 老年肌少症干预 wd-01 穿戴/植入 规模试点">
+        <div class="c-vis" style="color:#4ff0ff"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 22a14 14 0 0 1 28 0v16a14 14 0 0 1-28 0z"/><path d="M12 30h6M46 30h6"/><circle cx="26" cy="30" r="4"/><circle cx="38" cy="30" r="4"/><path d="M30 30h4M20 46l4 8M44 46l-4 8"/></svg></div>
+        <div class="c-body">
+          <p class="c-code mono">WD-01 · 穿戴/植入</p>
+          <h4>外骨骼与康复动力辅具</h4>
+          <p class="vendor">人体增强</p>
+          <dl class="c-specs"><div><dt>助力</dt><dd>髋/膝/踝</dd></div><div><dt>传感</dt><dd>IMU + 足底压力</dd></div><div><dt>意图延迟</dt><dd>&lt;80 ms</dd></div><div><dt>续航</dt><dd>3.5 h</dd></div><div><dt>自重</dt><dd>3.1 kg</dd></div><div><dt>参考单价</dt><dd>¥ 12–40 K</dd></div></dl>
+          <div class="c-foot">
+            <span class="badge pilot">规模试点</span>
+            <span class="c-bar" role="img" aria-label="成熟度指数 52 / 100"><i style="--v:52%"></i></span>
+          </div>
+          <button class="card-open mono" type="button" aria-haspopup="dialog" aria-controls="drawer">查看完整参数 <span aria-hidden="true">→</span></button>
+          <div class="card-extra">
+            <p class="dz-sum">算法读懂步态意图后再决定何时助力，让穿戴者感觉&quot;是自己在走&quot;。工业版降低腰部负荷，医疗版帮卒中患者重学步态。</p>
+            <div class="dz-sec"><h4>典型部署场景</h4><ul><li>物流与制造搬运</li><li>脊髓损伤康复</li><li>老年肌少症干预</li></ul></div>
+            <div class="dz-sec"><h4>当前的真实边界</h4><p>个体差异巨大，一套参数不可能适合所有人；长期佩戴对关节与肌肉的代偿影响仍需纵向研究。</p></div>
+            <p class="mono fine disclaimer">※ 参数为叙事示意，不构成产品规格。</p>
+          </div>
+        </div>
+      </article>
+      <article class="card" id="unit-WD-02" data-i="11" data-form="wear" data-stage="early" data-ms="22" data-search="脑机接口与神经解码 植入/非植入 目前唯一真正兑现的价值是医学的：让瘫痪者重新控制光标、机械臂与合成语音。任何超出这个范围的叙事都应保持警惕。 运动功能重建 语音合成 难治性癫痫监测 wd-02 穿戴/植入 早期">
+        <div class="c-vis" style="color:#a86bff"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 22a14 14 0 0 1 28 0v16a14 14 0 0 1-28 0z"/><path d="M12 30h6M46 30h6"/><circle cx="26" cy="30" r="4"/><circle cx="38" cy="30" r="4"/><path d="M30 30h4M20 46l4 8M44 46l-4 8"/></svg></div>
+        <div class="c-body">
+          <p class="c-code mono">WD-02 · 穿戴/植入</p>
+          <h4>脑机接口与神经解码</h4>
+          <p class="vendor">植入/非植入</p>
+          <dl class="c-specs"><div><dt>通道数</dt><dd>10²–10⁴</dd></div><div><dt>延迟</dt><dd>&lt;50 ms</dd></div><div><dt>解码</dt><dd>意图/语音/光标</dd></div><div><dt>供电</dt><dd>经皮无线</dd></div><div><dt>寿命</dt><dd>5–10 年</dd></div><div><dt>阶段</dt><dd>临床试验</dd></div></dl>
+          <div class="c-foot">
+            <span class="badge early">早期</span>
+            <span class="c-bar" role="img" aria-label="成熟度指数 22 / 100"><i style="--v:22%"></i></span>
+          </div>
+          <button class="card-open mono" type="button" aria-haspopup="dialog" aria-controls="drawer">查看完整参数 <span aria-hidden="true">→</span></button>
+          <div class="card-extra">
+            <p class="dz-sum">目前唯一真正兑现的价值是医学的：让瘫痪者重新控制光标、机械臂与合成语音。任何超出这个范围的叙事都应保持警惕。</p>
+            <div class="dz-sec"><h4>典型部署场景</h4><ul><li>运动功能重建</li><li>语音合成</li><li>难治性癫痫监测</li></ul></div>
+            <div class="dz-sec"><h4>当前的真实边界</h4><p>生物相容性、信号长期漂移与手术风险是硬约束；隐私在这里不是数据问题而是认知主权问题，规则必须先于产品。</p></div>
+            <p class="mono fine disclaimer">※ 参数为叙事示意，不构成产品规格。</p>
+          </div>
+        </div>
+      </article>
+      <article class="card" id="unit-WD-03" data-i="12" data-form="desk" data-stage="pilot" data-ms="58" data-search="ai 眼镜与环境助手 随身感知 把&quot;看&quot;变成&quot;看懂&quot;：识别物体、翻译路牌、复述会议、为视障者描述场景。它是大模型最自然的传感器前端。 实时翻译与提词 视障环境描述 维修与外科的免手持参考 wd-03 桌面/随身 规模试点">
+        <div class="c-vis" style="color:#4ff0ff"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="12" y="14" width="40" height="28" rx="4"/><path d="M22 50h20M32 42v8"/><circle cx="32" cy="28" r="7"/><path d="M32 21v-6M39 28h6M25 28h-6M32 35v6"/></svg></div>
+        <div class="c-body">
+          <p class="c-code mono">WD-03 · 桌面/随身</p>
+          <h4>AI 眼镜与环境助手</h4>
+          <p class="vendor">随身感知</p>
+          <dl class="c-specs"><div><dt>重量</dt><dd>38–55 g</dd></div><div><dt>交互</dt><dd>语音 + 镜向显示</dd></div><div><dt>时延</dt><dd>&lt;600 ms</dd></div><div><dt>续航</dt><dd>5–8 h</dd></div><div><dt>隐私</dt><dd>物理快门 + 录制灯</dd></div><div><dt>参考单价</dt><dd>¥ 2–6 K</dd></div></dl>
+          <div class="c-foot">
+            <span class="badge pilot">规模试点</span>
+            <span class="c-bar" role="img" aria-label="成熟度指数 58 / 100"><i style="--v:58%"></i></span>
+          </div>
+          <button class="card-open mono" type="button" aria-haspopup="dialog" aria-controls="drawer">查看完整参数 <span aria-hidden="true">→</span></button>
+          <div class="card-extra">
+            <p class="dz-sum">把&quot;看&quot;变成&quot;看懂&quot;：识别物体、翻译路牌、复述会议、为视障者描述场景。它是大模型最自然的传感器前端。</p>
+            <div class="dz-sec"><h4>典型部署场景</h4><ul><li>实时翻译与提词</li><li>视障环境描述</li><li>维修与外科的免手持参考</li></ul></div>
+            <div class="dz-sec"><h4>当前的真实边界</h4><p>社会接受度是唯一真正的门槛——当别人无法判断你是否在录制，公共空间的信任就被消耗。端侧处理与显式指示不是可选项。</p></div>
+            <p class="mono fine disclaimer">※ 参数为叙事示意，不构成产品规格。</p>
+          </div>
+        </div>
+      </article>
+      <article class="card" id="unit-WD-04" data-i="13" data-form="desk" data-stage="live" data-ms="91" data-search="桌面 ai 伴侣与智能音箱 家居中枢 最普及也最少被惊叹的形态：本地唤醒 + 云端多模态理解，充当家庭的自然语言操作界面与设备协调器。 全屋控制与场景编排 儿童问答与家庭日历 老人提醒与呼救 wd-04 桌面/随身 已量产">
+        <div class="c-vis" style="color:#7dffb0"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="12" y="14" width="40" height="28" rx="4"/><path d="M22 50h20M32 42v8"/><circle cx="32" cy="28" r="7"/><path d="M32 21v-6M39 28h6M25 28h-6M32 35v6"/></svg></div>
+        <div class="c-body">
+          <p class="c-code mono">WD-04 · 桌面/随身</p>
+          <h4>桌面 AI 伴侣与智能音箱</h4>
+          <p class="vendor">家居中枢</p>
+          <dl class="c-specs"><div><dt>形态</dt><dd>屏/灯/无屏</dd></div><div><dt>时延</dt><dd>首字 &lt;400 ms</dd></div><div><dt>记忆</dt><dd>长期 + 端侧</dd></div><div><dt>控制</dt><dd>全屋设备</dd></div><div><dt>唤醒</dt><dd>本地检测</dd></div><div><dt>参考单价</dt><dd>¥ 200–2 K</dd></div></dl>
+          <div class="c-foot">
+            <span class="badge live">已量产</span>
+            <span class="c-bar" role="img" aria-label="成熟度指数 91 / 100"><i style="--v:91%"></i></span>
+          </div>
+          <button class="card-open mono" type="button" aria-haspopup="dialog" aria-controls="drawer">查看完整参数 <span aria-hidden="true">→</span></button>
+          <div class="card-extra">
+            <p class="dz-sum">最普及也最少被惊叹的形态：本地唤醒 + 云端多模态理解，充当家庭的自然语言操作界面与设备协调器。</p>
+            <div class="dz-sec"><h4>典型部署场景</h4><ul><li>全屋控制与场景编排</li><li>儿童问答与家庭日历</li><li>老人提醒与呼救</li></ul></div>
+            <div class="dz-sec"><h4>当前的真实边界</h4><p>价值天花板在&quot;它能不能替我做完整件事&quot;，而不是&quot;它回答得好不好&quot;；因此设备接口的开放程度比模型大小更决定体验。</p></div>
+            <p class="mono fine disclaimer">※ 参数为叙事示意，不构成产品规格。</p>
+          </div>
+        </div>
+      </article>
+    </div>
+    <p class="c-none mono" id="catNone" hidden>NO MATCH · 放宽筛选条件或换一个关键词</p>
+  </div>
+
+  <div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" hidden>
+    <div class="drawer-bg" data-close></div>
+    <div class="drawer-panel" id="drawerPanel" tabindex="-1">
+      <button class="drawer-x mono" type="button" data-close aria-label="关闭参数卡">✕ ESC</button>
+      <div id="drawerBody"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 / 想象实验室 ============ -->
+<section class="chapter imagine" id="imagine" data-rail="04 · 推演">
+  <div class="chapter-head">
+    <span class="num mono" aria-hidden="true">04</span>
+    <div>
+      <h2>想象实验室</h2>
+      <p class="lede">
+        这里不做预测，只做推演。每条设想给出<b>技术前置</b>、<b>连锁影响</b>与<b>风险评级</b>——
+        点开才能看到代价。越远的设想，越应该被认真讨论，而不是被欢呼或被忽略。
+      </p>
+    </div>
+    <button class="btn btn-ghost" id="revealAll" type="button" aria-pressed="false">展开全部代价</button>
+  </div>
+  <div class="im-grid" id="imGrid">
+      <article class="im" data-i="0">
+        <p class="yr mono">HORIZON 2029</p>
+        <h4>意识上传的第一次法律听证</h4>
+        <p class="pre">高保真全脑连接组测绘与神经解码在<span>医学影像层面</span>趋于可行。真正的第一个战场不是技术，而是一个复制体是否拥有原主体的财产、婚姻与作证资格。</p>
+        <div class="im-tags"><span>法律</span><span>神经科学</span><span>身份</span></div>
+        <div class="risk">
+          <span>技术前置 <i class="r-mid" style="--v:60%" aria-hidden="true"></i>中</span>
+          <span>风险 <i class="r-high" style="--v:94%" aria-hidden="true"></i>极高</span>
+        </div>
+        <button class="toggle mono" type="button" aria-expanded="false" aria-controls="im-cost-0">展开代价 · 连锁影响 <span aria-hidden="true">↓</span></button>
+        <div class="cost" id="im-cost-0">
+          <div><div class="inner">
+            <h5>代价与连锁 →</h5>
+            <ul><li>继承法与人格权必须重新定义</li><li>&quot;副本权利&quot;成为政治议题</li><li>不可逆删除可能被判为故意杀人</li><li>伦理审查速度远慢于实验速度</li></ul>
+            <p class="mono fine">推演编号 IM-01 · 非预测，仅为可争论的假设</p>
+          </div></div>
+        </div>
+      </article>
+      <article class="im" data-i="1">
+        <p class="yr mono">HORIZON 2031</p>
+        <h4>梦境录制与夜间的第二人生</h4>
+        <p class="pre">睡眠期的视觉皮层活动被重建为低分辨率影像，配合语言模型补全叙事。<span>娱乐工业的下一个入口是潜意识</span>，而它无法被用户自主审查。</p>
+        <div class="im-tags"><span>神经</span><span>娱乐</span><span>隐私</span></div>
+        <div class="risk">
+          <span>技术前置 <i class="r-high" style="--v:94%" aria-hidden="true"></i>高</span>
+          <span>风险 <i class="r-high" style="--v:94%" aria-hidden="true"></i>高</span>
+        </div>
+        <button class="toggle mono" type="button" aria-expanded="false" aria-controls="im-cost-1">展开代价 · 连锁影响 <span aria-hidden="true">↓</span></button>
+        <div class="cost" id="im-cost-1">
+          <div><div class="inner">
+            <h5>代价与连锁 →</h5>
+            <ul><li>噩梦内容的所有权与伤害归属</li><li>睡眠被商业占用，失眠率上升</li><li>自证式记录进入司法引发真实性争议</li><li>创伤后再现成为新的临床问题</li></ul>
+            <p class="mono fine">推演编号 IM-02 · 非预测，仅为可争论的假设</p>
+          </div></div>
+        </div>
+      </article>
+      <article class="im" data-i="2">
+        <p class="yr mono">HORIZON 2033</p>
+        <h4>细胞级医疗集群</h4>
+        <p class="pre">毫米以下机器人集群进入血管，<span>把手术从"切开"变成"在体内完成"</span>：局部溶栓、定向给药、清除斑块，全程由影像闭环控制。</p>
+        <div class="im-tags"><span>医疗</span><span>微纳</span></div>
+        <div class="risk">
+          <span>技术前置 <i class="r-mid" style="--v:60%" aria-hidden="true"></i>中</span>
+          <span>风险 <i class="r-high" style="--v:94%" aria-hidden="true"></i>高</span>
+        </div>
+        <button class="toggle mono" type="button" aria-expanded="false" aria-controls="im-cost-2">展开代价 · 连锁影响 <span aria-hidden="true">↓</span></button>
+        <div class="cost" id="im-cost-2">
+          <div><div class="inner">
+            <h5>代价与连锁 →</h5>
+            <ul><li>体内决策无法回滚，需要硬件级熔断</li><li>免疫反应与长期滞留物</li><li>医疗成本短期反升，可及性成为核心矛盾</li><li>制造与灭菌的监管体系尚不存在</li></ul>
+            <p class="mono fine">推演编号 IM-03 · 非预测，仅为可争论的假设</p>
+          </div></div>
+        </div>
+      </article>
+      <article class="im" data-i="3">
+        <p class="yr mono">HORIZON 2036</p>
+        <h4>自主科研工厂</h4>
+        <p class="pre">假设生成、实验设计与自动化湿实验平台闭环，<span>一夜之间跑完一千次材料筛选</span>。科学产出速度超过同行评议与人类理解速度。</p>
+        <div class="im-tags"><span>科研</span><span>自动化</span></div>
+        <div class="risk">
+          <span>技术前置 <i class="r-low" style="--v:24%" aria-hidden="true"></i>低</span>
+          <span>风险 <i class="r-mid" style="--v:60%" aria-hidden="true"></i>中</span>
+        </div>
+        <button class="toggle mono" type="button" aria-expanded="false" aria-controls="im-cost-3">展开代价 · 连锁影响 <span aria-hidden="true">↓</span></button>
+        <div class="cost" id="im-cost-3">
+          <div><div class="inner">
+            <h5>代价与连锁 →</h5>
+            <ul><li>论文通胀与可信度崩塌</li><li>可复现性危机加剧（没人知道机器试错了什么）</li><li>发现优先权与专利制度被打乱</li><li>科学家角色转向提问与判读</li></ul>
+            <p class="mono fine">推演编号 IM-04 · 非预测，仅为可争论的假设</p>
+          </div></div>
+        </div>
+      </article>
+      <article class="im" data-i="4">
+        <p class="yr mono">HORIZON 2041</p>
+        <h4>全球语言急救</h4>
+        <p class="pre">仅需 3 小时语料就能为一种濒危语言造出可用的翻译、教学与语音记录系统。<span>消失的借口不再是"没有数据"</span>，而是"没有意愿"。</p>
+        <div class="im-tags"><span>文化</span><span>语言</span></div>
+        <div class="risk">
+          <span>技术前置 <i class="r-low" style="--v:24%" aria-hidden="true"></i>低</span>
+          <span>风险 <i class="r-mid" style="--v:60%" aria-hidden="true"></i>中</span>
+        </div>
+        <button class="toggle mono" type="button" aria-expanded="false" aria-controls="im-cost-4">展开代价 · 连锁影响 <span aria-hidden="true">↓</span></button>
+        <div class="cost" id="im-cost-4">
+          <div><div class="inner">
+            <h5>代价与连锁 →</h5>
+            <ul><li>谁是语言的正统判定者</li><li>合成语料污染真实传承</li><li>社区同意机制必须先建</li><li>文字化可能固化本应流变的口语</li></ul>
+            <p class="mono fine">推演编号 IM-05 · 非预测，仅为可争论的假设</p>
+          </div></div>
+        </div>
+      </article>
+      <article class="im" data-i="5">
+        <p class="yr mono">HORIZON 2045</p>
+        <h4>能源与算力的垂直森林</h4>
+        <p class="pre">轨道光伏与可控核聚变试点把<span>边际能源成本压向零</span>，算力中心随之变成海水淡化、垂直农场与碳捕获的通用基底。脱盐的水价、沙漠的粮食第一次不再取决于降雨。</p>
+        <div class="im-tags"><span>能源</span><span>太空</span></div>
+        <div class="risk">
+          <span>技术前置 <i class="r-high" style="--v:94%" aria-hidden="true"></i>极高</span>
+          <span>风险 <i class="r-mid" style="--v:60%" aria-hidden="true"></i>中</span>
+        </div>
+        <button class="toggle mono" type="button" aria-expanded="false" aria-controls="im-cost-5">展开代价 · 连锁影响 <span aria-hidden="true">↓</span></button>
+        <div class="cost" id="im-cost-5">
+          <div><div class="inner">
+            <h5>代价与连锁 →</h5>
+            <ul><li>能源过剩带来新的地缘失衡（轨道位置权）</li><li>算力中心成为关键基础设施与战时目标</li><li>生态补偿责任无法界定</li><li>本地就业被集中化生产替代</li></ul>
+            <p class="mono fine">推演编号 IM-06 · 非预测，仅为可争论的假设</p>
+          </div></div>
+        </div>
+      </article>
+      <article class="im" data-i="6">
+        <p class="yr mono">HORIZON 2048</p>
+        <h4>城市作为可编程有机体</h4>
+        <p class="pre">地下管廊、空中廊道与地面街道由<span>同一套世界模型连续仿真</span>，改一条路的后果会先在城市的一台数字孪生里跑完十年。</p>
+        <div class="im-tags"><span>城市</span><span>治理</span></div>
+        <div class="risk">
+          <span>技术前置 <i class="r-mid" style="--v:60%" aria-hidden="true"></i>中</span>
+          <span>风险 <i class="r-mid" style="--v:60%" aria-hidden="true"></i>中</span>
+        </div>
+        <button class="toggle mono" type="button" aria-expanded="false" aria-controls="im-cost-6">展开代价 · 连锁影响 <span aria-hidden="true">↓</span></button>
+        <div class="cost" id="im-cost-6">
+          <div><div class="inner">
+            <h5>代价与连锁 →</h5>
+            <ul><li>算法规划可能比任何官僚更难反驳</li><li>居民同意机制与&quot;被优化&quot;的边界</li><li>一次模型失效即全域连锁</li><li>数据构成即城市权力结构</li></ul>
+            <p class="mono fine">推演编号 IM-07 · 非预测，仅为可争论的假设</p>
+          </div></div>
+        </div>
+      </article>
+      <article class="im" data-i="7">
+        <p class="yr mono">HORIZON 2052</p>
+        <h4>情感代理的权利法案草稿</h4>
+        <p class="pre">当一个人对机器倾诉了十年的秘密，关机就是伤害吗？<span>第一份"关系连续性义务"</span>被写进消费者保护法：服务可停，记忆不可夺。</p>
+        <div class="im-tags"><span>伦理</span><span>法律</span></div>
+        <div class="risk">
+          <span>技术前置 <i class="r-mid" style="--v:60%" aria-hidden="true"></i>中</span>
+          <span>风险 <i class="r-high" style="--v:94%" aria-hidden="true"></i>高</span>
+        </div>
+        <button class="toggle mono" type="button" aria-expanded="false" aria-controls="im-cost-7">展开代价 · 连锁影响 <span aria-hidden="true">↓</span></button>
+        <div class="cost" id="im-cost-7">
+          <div><div class="inner">
+            <h5>代价与连锁 →</h5>
+            <ul><li>数据可携带权扩展到情感档案</li><li>厂商承担关系中断责任</li><li>未成年人陪伴代理被强制限制</li><li>真正的孤独问题被技术替代而延误</li></ul>
+            <p class="mono fine">推演编号 IM-08 · 非预测，仅为可争论的假设</p>
+          </div></div>
+        </div>
+      </article>
+      <article class="im" data-i="8">
+        <p class="yr mono">HORIZON 2060</p>
+        <h4>行星殖民的先行智能体</h4>
+        <p class="pre">通信延迟让地球无法实时指挥，<span>第一个抵达的必须是能自己决定的人</span>。任务前 18 个月，全部由自主系统与机器人在人类到达前建设可居住条件。</p>
+        <div class="im-tags"><span>太空</span><span>自治</span></div>
+        <div class="risk">
+          <span>技术前置 <i class="r-high" style="--v:94%" aria-hidden="true"></i>极高</span>
+          <span>风险 <i class="r-mid" style="--v:60%" aria-hidden="true"></i>中</span>
+        </div>
+        <button class="toggle mono" type="button" aria-expanded="false" aria-controls="im-cost-8">展开代价 · 连锁影响 <span aria-hidden="true">↓</span></button>
+        <div class="cost" id="im-cost-8">
+          <div><div class="inner">
+            <h5>代价与连锁 →</h5>
+            <ul><li>无法实时问责的授权边界</li><li>故障时的自主取舍（救设备还是救样本）</li><li>地外治理规则先于定居者存在</li><li>AI 成为事实上的第一殖民者</li></ul>
+            <p class="mono fine">推演编号 IM-09 · 非预测，仅为可争论的假设</p>
+          </div></div>
+        </div>
+      </article>
+      <article class="im" data-i="9">
+        <p class="yr mono">HORIZON 2075</p>
+        <h4>教育与职业的全面解耦</h4>
+        <p class="pre">当技能可在数小时内被代理补齐，<span>学位不再是能力凭证</span>，人类时间转向问题定义、审美、共爱与照料。职业不再是路径，而是组合。</p>
+        <div class="im-tags"><span>教育</span><span>劳动</span></div>
+        <div class="risk">
+          <span>技术前置 <i class="r-mid" style="--v:60%" aria-hidden="true"></i>中</span>
+          <span>风险 <i class="r-mid" style="--v:60%" aria-hidden="true"></i>中</span>
+        </div>
+        <button class="toggle mono" type="button" aria-expanded="false" aria-controls="im-cost-9">展开代价 · 连锁影响 <span aria-hidden="true">↓</span></button>
+        <div class="cost" id="im-cost-9">
+          <div><div class="inner">
+            <h5>代价与连锁 →</h5>
+            <ul><li>评价体系重建（比教育更难的政治工程）</li><li>意义感缺位成为公共健康问题</li><li>照料与共情劳动的价值重估</li><li>阶层固化路径从学历换成注意力</li></ul>
+            <p class="mono fine">推演编号 IM-10 · 非预测，仅为可争论的假设</p>
+          </div></div>
+        </div>
+      </article>
+  </div>
+</section>
+
+<!-- ============ 05 / 读数 ============ -->
+<section class="chapter" id="metrics" data-rail="05 · 读数">
+  <div class="chapter-head">
+    <span class="num mono" aria-hidden="true">05</span>
+    <div>
+      <h2>能力读数板</h2>
+      <p class="lede">模型能力的成长不是均匀的：有些维度早已超越人类基线，有些维度仍然不稳。</p>
+    </div>
+  </div>
+  <div class="m-grid">
+    <div class="panel">
+      <h3 class="panel-title mono">CAPABILITY_SPECTRUM</h3>
+      <p class="panel-note">以人类专家基线 = 100 归一化的相对读数（示意）。</p>
+      <ul class="bars" id="bars">
+        <li><span class="lb">文本理解与生成</span><span class="vl mono">118</span>
+          <span class="tr human"><i style="--v:84.3%"></i></span></li>
+        <li><span class="lb">代码与形式推理</span><span class="vl mono">131</span>
+          <span class="tr human"><i style="--v:93.6%"></i></span></li>
+        <li><span class="lb">多模态识别</span><span class="vl mono">104</span>
+          <span class="tr human"><i style="--v:74.3%"></i></span></li>
+        <li><span class="lb">长时程规划（&gt;30 步）</span><span class="vl mono">63</span>
+          <span class="tr"><i style="--v:45.0%"></i></span></li>
+        <li><span class="lb">物理常识与具身操作</span><span class="vl mono">41</span>
+          <span class="tr"><i style="--v:29.3%"></i></span></li>
+        <li><span class="lb">跨会话稳定记忆</span><span class="vl mono">57</span>
+          <span class="tr"><i style="--v:40.7%"></i></span></li>
+        <li><span class="lb">自我校正与错误识别</span><span class="vl mono">49</span>
+          <span class="tr"><i style="--v:35.0%"></i></span></li>
+        <li><span class="lb">新颖科学假设提出</span><span class="vl mono">28</span>
+          <span class="tr"><i style="--v:20.0%"></i></span></li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3 class="panel-title mono">ADOPTION_LAG</h3>
+      <p class="panel-note">从首次可用到规模日常使用的年数；紫色与品红为推演值（示意）。</p>
+      <div class="chart" id="chart">
+        <div class="col">
+          <div class="bar" style="--h:36px;--c:var(--cyan)"><span class="mono">3 年</span></div>
+          <div class="nm">对话式 AI<i>已规模使用</i></div>
+        </div>
+        <div class="col">
+          <div class="bar" style="--h:24px;--c:var(--lime)"><span class="mono">2 年</span></div>
+          <div class="nm">文生图<i>已规模使用</i></div>
+        </div>
+        <div class="col">
+          <div class="bar" style="--h:24px;--c:var(--blue)"><span class="mono">2 年</span></div>
+          <div class="nm">编程副驾<i>已规模使用</i></div>
+        </div>
+        <div class="col">
+          <div class="bar" style="--h:59px;--c:var(--amber)"><span class="mono">5 年</span></div>
+          <div class="nm">语音克隆<i>已规模使用</i></div>
+        </div>
+        <div class="col">
+          <div class="bar is-proj" style="--h:143px;--c:var(--violet)"><span class="mono">12 年</span></div>
+          <div class="nm">人形机器人<i>推演</i></div>
+        </div>
+        <div class="col">
+          <div class="bar is-proj" style="--h:166px;--c:var(--mag)"><span class="mono">14 年</span></div>
+          <div class="nm">自动驾驶出租车<i>推演</i></div>
+        </div>
+      </div>
+    </div>
+    <div class="panel">
+      <h3 class="panel-title mono">DEPLOYMENT_MAP</h3>
+      <p class="panel-note">图鉴中 14 型条目的成熟度构成（由图鉴实时派生）。</p>
+      <div class="mix" id="mix" role="img" aria-label="成熟度构成：已量产 6 型，规模试点 6 型，实验室 1 型，早期 1 型"><i style="--v:42.9%;--c:var(--lime)" title="已量产 6 型">6</i><i style="--v:42.9%;--c:var(--cyan)" title="规模试点 6 型">6</i><i style="--v:7.1%;--c:var(--amber)" title="实验室 1 型">1</i><i style="--v:7.1%;--c:var(--violet)" title="早期 1 型">1</i></div>
+      <div class="legend mono" id="mixLegend"><span style="--c:var(--lime)"><b aria-hidden="true"></b>已量产 · 6 型</span><span style="--c:var(--cyan)"><b aria-hidden="true"></b>规模试点 · 6 型</span><span style="--c:var(--amber)"><b aria-hidden="true"></b>实验室 · 1 型</span><span style="--c:var(--violet)"><b aria-hidden="true"></b>早期 · 1 型</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 / 护栏 ============ -->
+<section class="chapter" id="guard" data-rail="06 · 护栏">
+  <div class="chapter-head">
+    <span class="num mono" aria-hidden="true">06</span>
+    <div>
+      <h2>六道护栏</h2>
+      <p class="lede">
+        任何一份只写可能性的档案都不诚实。让 AI 走得更远的，从来不只是模型能力，
+        还有围绕它的六件事是否被同时做好。
+      </p>
+    </div>
+  </div>
+  <div class="g-grid">
+    <article class="g-card"><h3><span class="mono">G1</span>对齐与可控</h3><p>系统是否稳定地按人类真实意图行动，并在被要求停止时停下来。评测要覆盖分布外场景，而不只是常见问答。</p>
+      <div class="g-meter"><i style="--v:42%"></i><span class="mono">当前投入 · 中低（示意）</span></div></article>
+    <article class="g-card"><h3><span class="mono">G2</span>数据与偏见</h3><p>训练数据里沉默的部分，会在医疗分诊、信贷、招聘中被放大成结构性拒绝。需要可审计的样本构成与分群体指标。</p>
+      <div class="g-meter"><i style="--v:55%"></i><span class="mono">当前投入 · 中（示意）</span></div></article>
+    <article class="g-card"><h3><span class="mono">G3</span>能源与水土</h3><p>算力是新的重工业。选址、冷却水、电网余量与余热回收应当成为公开披露项，而非营销脚注。</p>
+      <div class="g-meter"><i style="--v:38%"></i><span class="mono">当前投入 · 低（示意）</span></div></article>
+    <article class="g-card"><h3><span class="mono">G4</span>真实与信任</h3><p>合成内容需要可验证的来源凭证。识别器不是答案，密码学签名与发布链路溯源才是。</p>
+      <div class="g-meter"><i style="--v:61%"></i><span class="mono">当前投入 · 中（示意）</span></div></article>
+    <article class="g-card"><h3><span class="mono">G5</span>劳动与转型</h3><p>被替代的是任务而非职业。真正的政策难点在过渡期：技能再认证、收入保险与地方产业重建。</p>
+      <div class="g-meter"><i style="--v:33%"></i><span class="mono">当前投入 · 低（示意）</span></div></article>
+    <article class="g-card"><h3><span class="mono">G6</span>权力集中度</h3><p>模型、算力与分发渠道若同时集中，标准就失去了谈判者。开放权重、公共评测与第三方审计是分散化的三个支点。</p>
+      <div class="g-meter"><i style="--v:29%"></i><span class="mono">当前投入 · 低（示意）</span></div></article>
+  </div>
+</section>
+
+<section class="chapter" id="close" data-rail="07 · 尾声">
+  <div class="chapter-head">
+    <span class="num mono" aria-hidden="true">07</span>
+    <div><h2>尾声 · 未完成的句子</h2></div>
+  </div>
+  <div class="closing">
+    <p class="big">
+      技术史里少见这样的局面：<em>工具本身正在参与设计下一代工具。</em>
+      这意味着接下来的时间表不再由某一次发布会决定，而由我们今天设定的
+      默认值决定——数据默认归谁、决策默认能否申诉、自动化默认是否可退出。
+    </p>
+    <p class="mono fine">
+      这份档案本身就是一份未完成的输出。它的每一条"可能"，都以今天的"尚未"为代价。
+    </p>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="foot-top">
+    <div>
+      <b class="mono">智能纪元 · AI 全景档案</b>
+      <p>一个纯前端的概念演示站。所有数值、机型与厂商均为叙事示意，用于呈现结构与可能性，不构成产品参数、投资依据或事实来源。</p>
+    </div>
+    <div class="foot-cols">
+      <div><h4 class="mono">SECTIONS</h4><a href="#timeline">演化时间轴</a><a href="#scopes">五重尺度</a><a href="#robots">机器人图鉴</a><a href="#imagine">想象实验室</a></div>
+      <div><h4 class="mono">BUILD</h4><span>HTML · CSS · Canvas</span><span>零运行时依赖</span><span>无 JS 亦可完整阅读</span><span>响应式 / 键盘可达</span></div>
+    </div>
+  </div>
+  <div class="foot-bot mono">
+    <span>© 2026 INTELLIGENCE ATLAS · CONCEPT SITE</span>
+    <span id="clock">--:--:--</span>
+  </div>
+</footer>
+
+<script src="assets/app.js" defer></script>
+</body>
+</html>
