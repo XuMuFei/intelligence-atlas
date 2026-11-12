@@ -100,8 +100,10 @@ const el = (t, c) => { const n = document.createElement(t); if (c) n.className =
    2 / 移动端章节菜单
    ------------------------------------------------------------ */
 (() => {
-  const btn = $('#menuBtn'), nav = $('#mnav');
+  const btn = $('#menuBtn'), nav = $('#mnav'), topbar = $('#topbar');
+  function place(){ nav.style.top = topbar.getBoundingClientRect().bottom + 'px'; }
   function setMenu(open){
+    if (open) place();
     nav.hidden = !open;
     btn.setAttribute('aria-expanded', String(open));
     btn.setAttribute('aria-label', open ? '关闭章节菜单' : '打开章节菜单');
@@ -115,6 +117,7 @@ const el = (t, c) => { const n = document.createElement(t); if (c) n.className =
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && !nav.hidden){ setMenu(false); btn.focus(); }
   });
+  addEventListener('resize', () => { if (!nav.hidden) place(); });
 })();
 
 /* ------------------------------------------------------------
@@ -241,6 +244,12 @@ const el = (t, c) => { const n = document.createElement(t); if (c) n.className =
       t.tabIndex = on ? 0 : -1;
     });
     panels.forEach(p => p.classList.toggle('is-active', p.id === tab.getAttribute('aria-controls')));
+    const strip = tab.parentElement;
+    if (strip.scrollWidth > strip.clientWidth){
+      const tr = tab.getBoundingClientRect(), sr = strip.getBoundingClientRect();
+      if (tr.left < sr.left) strip.scrollLeft += tr.left - sr.left - 8;
+      else if (tr.right > sr.right) strip.scrollLeft += tr.right - sr.right + 8;
+    }
     if (focus) tab.focus({preventScroll:true});
   }
   tabs.forEach(t => t.addEventListener('click', () => activate(t)));
